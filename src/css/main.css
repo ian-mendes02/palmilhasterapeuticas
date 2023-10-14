@@ -1,0 +1,119 @@
+.topnav {
+  padding: 1%;
+}
+.topnav img {
+  width: 164px;
+}
+
+.header .container {
+  max-width: 35rem;
+}
+.header .box {
+  padding: 3%;
+}
+.header h1 {
+  margin: 5% 0;
+}
+.header h3 {
+  margin: 5% 0;
+}
+
+.proposta h2 {
+  max-width: 50rem;
+}
+.proposta .container {
+  padding: 2% 0;
+}
+.proposta .container span {
+  font-size: 1.25rem;
+}
+.proposta .wrapper {
+  padding: 5% 0;
+  align-items: stretch;
+}
+.proposta .box {
+  aspect-ratio: 3/1;
+  width: 364px;
+  padding: 3%;
+  margin-right: 16px;
+  align-items: start;
+  justify-content: start;
+}
+.proposta .box .date {
+  font-weight: 100;
+}
+
+.inscreva {
+  padding: 2%;
+  background-color: var(--colorPrimary);
+  text-align: center;
+  box-shadow: var(--boxShadow2);
+}
+.inscreva h2 {
+  font-weight: 700;
+}
+.inscreva p {
+  margin: 24px;
+}
+.inscreva button {
+  margin: 24px auto;
+  padding: 1% 5%;
+  color: var(--colorPrimary);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: var(--boxShadow2);
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+.inscreva button:hover {
+  transform: scale(101%);
+}
+.inscreva .tab-button {
+  z-index: 1;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #092430;
+  width: 96px;
+  aspect-ratio: 1;
+  mask-image: url(../../public/img/svg/upside-down-bell.svg);
+  -webkit-mask-image: url(../../public/img/svg/upside-down-bell.svg);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: top;
+  -webkit-mask-position: top;
+  box-shadow: var(--boxShadow2);
+}
+.inscreva img {
+  position: absolute;
+  top: -7.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  margin: auto;
+  z-index: 3;
+}
+
+.sobre .wrapper {
+  justify-content: space-evenly;
+}
+.sobre .container {
+  flex-basis: 40%;
+}
+.sobre .container p {
+  font-size: 0.8rem;
+}
+
+.footer {
+  text-align: center;
+  background-color: #1b1b1c;
+}
+.footer .wrapper {
+  justify-content: center;
+}
+
+/*# sourceMappingURL=main.css.map */
