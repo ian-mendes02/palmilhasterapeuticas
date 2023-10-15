@@ -5,6 +5,14 @@
   width: 164px;
 }
 
+.header {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-image: url(../../public/img/foto-capa-1.png);
+  background-repeat: no-repeat;
+  background-position: 80%;
+  background-size: contain;
+}
 .header .container {
   max-width: 35rem;
 }
@@ -14,8 +22,14 @@
 .header h1 {
   margin: 5% 0;
 }
+.header h2 {
+  font-size: 1.25rem;
+}
 .header h3 {
   margin: 5% 0;
+}
+.header img {
+  margin: 48px 0;
 }
 
 .proposta h2 {
@@ -106,6 +120,12 @@
 }
 .sobre .container p {
   font-size: 0.8rem;
+}
+.sobre img {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 35%;
 }
 
 .footer {

@@ -6,6 +6,12 @@
 }
 
 .header {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-image: url(../../public/img/foto-capa-1.png);
+    background-repeat: no-repeat;
+    background-position: 80%;
+    background-size: contain;
     .container {
         max-width: 35rem;
     }
@@ -15,8 +21,14 @@
     h1 {
         margin: 5% 0;
     }
+    h2 {
+        font-size: 1.25rem;
+    }
     h3 {
         margin: 5% 0;
+    }
+    img {
+        margin: 48px 0;
     }
 }
 
@@ -103,6 +115,12 @@
         p {
             font-size: 0.8rem;
         }
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        left: 15%;
+        width: 35%;
     }
 }
 
