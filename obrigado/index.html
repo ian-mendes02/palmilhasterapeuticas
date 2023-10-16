@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Palmilhas Terapêuticas: da Ciência ao Negócio | Obrigado!</title>
+        <link rel="stylesheet" href="../public/css/style.css">
+        <link rel="icon" type="image/x-icon" href="../public/img/logo-ptcn-icone-default.ico">
+        <style>
+            .header {
+                width: 100%;
+            }
+
+            .header strong {
+                font-size: 3rem;
+                margin: 12px;
+                color: var(--colorAccent);
+            }
+
+            .header .my-button {
+                padding: 2%;
+                background-color: rgba(37, 211, 101, 0.8156862745);
+                background-image: url(../public/img/svg/whatsapp.svg);
+                background-size: 15%;
+                background-position: 10%;
+                background-repeat: no-repeat;
+                width: 80%;
+                margin: 24px 0;
+                border: none;
+                font-size: 1.5rem;
+            }
+
+            .header .container {
+                margin: 2% 0;
+                width: 70%;
+            }
+
+            .header h3 {
+                opacity: 0.8;
+            }
+
+            .header h3 a {
+                text-decoration: underline;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            .header img {
+                width: 512px;
+                transform: translateX(-7.5%);
+            }
+
+            .footer {
+                text-align: center;
+                background-color: #1b1b1c;
+            }
+
+            .footer .wrapper {
+                justify-content: center;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div data-button="container">
+            <a data-button="scroll-top" title="Voltar ao topo da página" onclick="window.scrollTo(0,0)"><button></button></a>
+            <a href="https://wa.me/5512982628132" target="_blank" data-button="whatsapp" title="Fale com a gente no WhatsApp!"><button></button></a>
+        </div>
+
+        <section class="header">
+            <div class="content">
+                <div class="content-default">
+                    <div class="container">
+                        <img src="../public/img/logo-ptcn-4.png" draggable="false">
+                    </div>
+                    <div class="container">
+                        <h1 class="accent-color">Falta pouco para concluir sua inscrição.</h1><br>
+                        <h3>Agradecemos sua participação! Agora, siga os passos a seguir para finalizar o seu cadastro:</h3>
+                    </div>
+                    <div class="container">
+                        <h2><strong>1.</strong>Abra o e-mail que te enviamos e siga as orientações.</h2>
+                        <br>
+                        <h2><strong>2.</strong>Clique no botão abaixo para entrar no<mark class="accent-color"> grupo de WhatsApp</mark> e receber informações e materiais complementares do evento.</h2>
+                        <a href=""><button class="my-button">QUERO ENTRAR NO GRUPO</button></a>
+                    </div>
+                    <div class="container">
+                        <h3>
+                            Obs: Caso não tenha recebido o e-mail na sua caixa de entrada, verifique na sua caixa de spam ou lixo eletrônico. <br>
+                            Caso não tenha recebido o e-mail em até 15 minutos, você pode clicar <a onclick="promptCadastro()">aqui</a> para efetuar o seu cadastro novamente.
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="content">
+                <div class="content-default">
+                    <div class="wrapper">
+                        <div class="container">
+                            <h3><i>Palmilhando® 2023 - Todos os direitos reservados.</i></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+
+</html>
