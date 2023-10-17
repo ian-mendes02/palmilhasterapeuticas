@@ -1,19 +1,25 @@
 <?php
-
-ini_set( 'display_errors', 1 );
-error_reporting( E_ALL );
-
-$from = "contato@palmilhasterapeuticas.com.br";
-$to = $_POST['user_email'];
-$subject = "🚨 Falta muito pouco para garantir sua participação!";
-$message = file_get_contents('mail/confirmacao.html');
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-$headers = "From:" . $from;
-if(mail($to,$subject,$message, $headers)) {
-   echo "Message was sent.";
+ini_set('display_errors', 1);
+require 'vendor/autoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+$mail = new PHPMailer;
+$mail->CharSet = "UTF-8";
+$mail->Encoding = 'base64';
+$mail->isSMTP();
+$mail->SMTPDebug = 0;
+$mail->Host = 'smtp.hostinger.com';
+$mail->Port = 587;
+$mail->SMTPAuth = true;
+$mail->Username = 'contato@palmilhasterapeuticas.com.br';
+$mail->Password = '@Podal2023';
+$mail->setFrom('contato@palmilhasterapeuticas.com.br', 'Contato Palmilhas Terapêuticas');
+$mail->addReplyTo('contato@palmilhasterapeuticas.com.br', 'Contato Palmilhas Terapêuticas');
+$mail->addAddress($_POST['user_email'], $_POST['user_name']);
+$mail->Subject = '🚨 Falta muito pouco para garantir sua participação!';
+$mail->msgHTML(file_get_contents('mail/confirmacao.html'), __DIR__);
+if (!$mail->send()) {
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
 } else {
-   echo "Message was not sent.";
+    echo 'The email message was sent.';
 }
-
 ?>

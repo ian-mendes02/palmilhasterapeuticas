@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt" pageID="3">
 
     <head>
         <meta charset="UTF-8">
@@ -8,9 +8,21 @@
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/main.css">
         <link rel="icon" type="image/x-icon" href="public/img/logo-ptcn-icone-default.ico">
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5TTGRP4');</script>
+        <!-- End Google Tag Manager -->
     </head>
 
     <body>
+
+        <img src="public/img/foto-capa-3.png" draggable="false" class="bg-img">
 
         <div data-button="container">
             <a data-button="scroll-top" title="Voltar ao topo da página"><button></button></a>
@@ -32,7 +44,7 @@
                             <form id="subscribe">
                                 <input type="text" name="user_name" id="user_name" placeholder="Seu nome...">
                                 <input type="email" name="user_email" id="user_email" placeholder="Seu melhor e-mail...">
-                                <button type="submit" class="my-button">QUERO GARANTIR A MINHA INSCRIÇÃO</button>
+                                <button type="submit" class="my-button" id="submit">QUERO GARANTIR A MINHA INSCRIÇÃO</button>
                             </form>
                         </div>
                     </div>
@@ -88,11 +100,11 @@
                         </div>
                         <div class="container">
                             <p>
-                                <h2 class="accent-color">ANDRÉ <mark class="primary-color">MENDES</mark></h2>
-                                <br>
-                                Meu nome é André Mendes, sou fisioterapeuta formado em 2003, especialista em Fisioterapia Ortopédica, Mestre e Doutorando em Fisioterapia pela UNICID. Autor do livro "Palmilhas Terapêuticas: Ciência e Prática Clínica" e co-autor do livro " Manual de Palmilhas e Calçados Ortopédicos".
-                                <br><br>
-                                Fundador da Podoshop e do canal Palmilhando, tenho o objetivo de traduzir ciência de boa qualidade para clínicos e, assim, fazer com que a prática baseada em evidências se fortaleça entre os profissionais que utilizam as palmilhas como recurso terapêutico, além de ajudá-los a terem um negócio lucrativo.
+                            <h2 class="accent-color">ANDRÉ <mark class="primary-color">MENDES</mark></h2>
+                            <br>
+                            Meu nome é André Mendes, sou fisioterapeuta formado em 2003, especialista em Fisioterapia Ortopédica, Mestre e Doutorando em Fisioterapia pela UNICID. Autor do livro "Palmilhas Terapêuticas: Ciência e Prática Clínica" e co-autor do livro " Manual de Palmilhas e Calçados Ortopédicos".
+                            <br><br>
+                            Fundador da Podoshop e do canal Palmilhando, tenho o objetivo de traduzir ciência de boa qualidade para clínicos e, assim, fazer com que a prática baseada em evidências se fortaleça entre os profissionais que utilizam as palmilhas como recurso terapêutico, além de ajudá-los a terem um negócio lucrativo.
                             </p>
                         </div>
                     </div>
@@ -100,31 +112,53 @@
             </div>
         </section>
 
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TTGRP4"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         <script src="public/js/floating-buttons.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(document).ready(function () {
-                const pageID = 3;
+                var pageID = document.documentElement.getAttribute("pageID");
+                if (localStorage.getItem("pageID") == null) {
+                    localStorage.setItem("pageID", pageID);
+                };
                 $('#subscribe').submit(function (e) {
                     e.preventDefault();
-                    var userData = {
-                        pageID: pageID,
-                        user_name: $("#user_name").val(),
-                        user_email: $("#user_email").val()
-                    };
-                    $.ajax({
-                        type: 'POST',
-                        url: 'cadastro.php',
-                        data: userData,
-                        success: function () {
-                            $.ajax({
-                                type: 'POST',
-                                url: 'mail.php',
-                                data: $("#user_email").val(),
-                            })
-                            document.location = "./obrigado";
-                        }
-                    });
+                    let input1 = $("#user_name").val();
+                    let input2 = $("#user_email").val();
+                    let warning = document.createElement("span");
+                    if (input1 == "" || input2 == "") {
+                        $("#subscribe").append(warning);
+                        warning.style.color = "tomato";
+                        warning.style.fontSize = "0.8rem";
+                        warning.style.textAlign = "center";
+                        warning.innerHTML = "Parece que há um ou mais campos em branco. Por favor, tente novamente"
+                    } else {
+                        $("#submit").html("<img src='public/img/loading.gif'>");
+                        warning.remove();
+                        var userData = {
+                            pageID: pageID,
+                            user_name: input1,
+                            user_email: input2
+                        };
+                        $.ajax({
+                            type: 'POST',
+                            url: 'cadastro.php',
+                            data: userData,
+                            success: function () {
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'mail.php',
+                                    data: input2,
+                                });
+                                $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
+                                document.location = "./obrigado";
+                            }
+                        });
+                    }
                 });
             });
         </script>
