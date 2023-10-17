@@ -92,7 +92,10 @@
                                 $.ajax({
                                     type: 'POST',
                                     url: 'mail.php',
-                                    data: input2,
+                                    data: {
+                                        user_name: input1,
+                                        user_email: input2
+                                    }
                                 });
                                 $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
                                 document.location = "./obrigado";
