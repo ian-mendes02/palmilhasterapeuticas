@@ -18,6 +18,7 @@
                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
             })(window, document, 'script', 'dataLayer', 'GTM-5TTGRP4');</script>
         <!-- End Google Tag Manager -->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -107,58 +108,12 @@
             </div>
         </section>
 
+        <script src="public/js/ptcn.js"></script>
+
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TTGRP4"
                 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                var pageID = document.documentElement.getAttribute("pageID");
-                if (localStorage.getItem("pageID") == null) {
-                    localStorage.setItem("pageID", pageID);
-                };
-                $('#subscribe').submit(function (e) {
-                    e.preventDefault();
-                    let input1 = $("#user_name").val();
-                    let input2 = $("#user_email").val();
-                    let warning = document.createElement("span");
-                    if (input1 == "" || input2 == "") {
-                        $("#subscribe").append(warning);
-                        warning.style.color = "tomato";
-                        warning.style.fontSize = "0.8rem";
-                        warning.style.textAlign = "center";
-                        warning.innerHTML = "Parece que há um ou mais campos em branco. Por favor, tente novamente"
-                    } else {
-                        $("#submit").html("<img src='public/img/loading.gif'>");
-                        warning.remove();
-                        var userData = {
-                            pageID: pageID,
-                            user_name: input1,
-                            user_email: input2
-                        };
-                        $.ajax({
-                            type: 'POST',
-                            url: 'cadastro.php',
-                            data: userData,
-                            success: function () {
-                                $.ajax({
-                                    type: 'POST',
-                                    url: 'mail.php',
-                                    data: {
-                                        user_name: input1,
-                                        user_email: input2
-                                    }
-                                });
-                                $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
-                                document.location = "./obrigado";
-                            }
-                        });
-                    }
-                });
-            });
-        </script>
 
     </body>
 
