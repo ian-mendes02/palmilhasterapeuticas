@@ -29,19 +29,19 @@ $(document).ready(function () {
             };
             $.ajax({
                 type: 'POST',
-                url: '../../cadastro.php',
+                url: 'cadastro.php',
                 data: userData,
                 success: function () {
                     $.ajax({
                         type: 'POST',
-                        url: '../../mail.php',
+                        url: 'mail.php',
                         data: {
                             user_name: input1,
                             user_email: input2
                         }
                     });
                     $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
-                    document.location = "../../obrigado";
+                    document.location = "obrigado";
                 }
             });
         }
