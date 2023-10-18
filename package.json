@@ -4,10 +4,8 @@
   "description": "palmilhasterapeuticas",
   "main": "index.js",
   "scripts": {
-    "build-style": "postcss src/css/style.css --dir public/css",
-    "watch-style": "postcss src/css/style.css --dir public/css --watch",
-    "build-main": "postcss src/css/main.css --dir public/css",
-    "watch-main": "postcss src/css/main.css --dir public/css --watch"
+    "build:publico-quente": "postcss publico-quente/src/css/style.css --dir postcss publico-quente/public/css/style.css",
+    "build:ptcn-captura": "postcss ptcn-captura/src/css/style.css --dir postcss ptcn-captura/public/css/style.css"
   },
   "keywords": [],
   "author": "",
