@@ -1137,58 +1137,6 @@
 
 	<body class="blue-grad">
 
-		<!-- 		<div id="aviso-janela">
-			<div class="wrapper bg-white">
-				<h1>Seja bem vindo(a) à <br><mark class="gradient bold">Imersão em Palmilhas Terapêuticas</mark></h1>
-				<h2>Já vamos liberar o seu acesso! Mas antes, precisamos de algumas informações.</h2>
-				<div class="container">
-					<form id="profissional_saude" method="post">
-						<p>Você é profissional da saúde?</p>
-						<select name="É profissional?" id="profissional">
-							<option value="">Selecione uma opção...</option>
-							<option value="sim">Sim</option>
-							<option value="nao">Não</option>
-						</select>
-					</form>
-
-					<form id="area_atuacao" method="post">
-						<p>Qual a sua área de atuação?</p>
-						<select name="Área de atuação" id="area">
-							<option value="">Selecione uma opção...</option>
-							<option value="fisioterapia">Fisioterapia</option>
-							<option value="podologia">Podologia</option>
-							<option value="podiatria">Podiatria</option>
-							<option value="outra">Outra (especifique)</option>
-						</select>
-					</form>
-
-					<form id="ocupacao" method="post">
-						<p>Qual posição você ocupa?</p>
-						<select name="Posição" id="posicao">
-							<option value="">Selecione uma opção...</option>
-							<option value="clinico(a)">Clínico(a)</option>
-							<option value="enfermeiro(a)">Enfermeiro(a)</option>
-							<option value="outra">Outra (especifique)</option>
-						</select>
-					</form>
-
-					<form id="experiencia_previa" method="post">
-						<p>Possui experiência prévia com <mark class="gradient">palmilhas terapêuticas</mark>?</p>
-						<select name="Experiência Prévia" id="experiencia">
-							<option value="">Selecione uma opção...</option>
-							<option value="sim">Sim</option>
-							<option value="nao">Não</option>
-						</select>
-					</form>
-
-				</div>
-				<a type="link">
-					<button type="submit">Enviar</button>
-				</a>
-				<span>(Os campos marcados com <mark style="color: tomato">*</mark> são obrigatórios)</span>
-			</div>
-		</div> -->
-
 		<section class="header bg-white">
 			<div class="content">
 				<div class="content-default">
@@ -1800,7 +1748,87 @@
 		</section>
 
 		<!-- <script src='js/script.js'></script> -->
-		<script src='https://cdn.palmilhando.com.br/cdn/js/collapsibles.js'></script>
+		<script>
+			const collapsibles = document.querySelectorAll('[data-collapsible="body"]');
+			const collapsibleContent = document.querySelectorAll('[data-collapsible="content"]');
+
+			function toggleExpand(content) {
+				if (content.parentElement.style.maxHeight) {
+					content.parentElement.style.maxHeight = null;
+				} else {
+					content.parentElement.style.maxHeight = (content.scrollHeight * 1.5) + 'px';
+				}
+			}
+
+			function collapseNeighbors() {
+				for (const content of collapsibleContent) {
+					if (content.parentElement.classList.contains('active')) {
+						content.parentElement.classList.remove('active');
+						toggleExpand(content);
+					}
+				}
+			}
+
+			for (const collapsible of collapsibles)
+				collapsible.addEventListener('click', function () {
+					if (!this.classList.contains('active')) {
+						collapseNeighbors();
+					}
+					this.classList.toggle('active');
+					toggleExpand(this.lastElementChild);
+				});
+		</script>
+
+		<script>
+			const scrollWrapper = document.querySelector('[data-scroll="wrapper"]');
+			const scrollBoxes = document.querySelectorAll('[data-scroll="box"]');
+			const scrollButton = document.querySelectorAll('[data-scroll="buttons"] button');
+
+			const boxes = scrollBoxes.length;
+
+			const maskImage0 = 'linear-gradient(to right, black 98%, transparent)';
+			const maskImage50 = 'linear-gradient(to right, transparent, black 2%, black 98%, transparent)';
+			const maskImage100 = 'linear-gradient(to left, black 98%, rgba(0, 0, 0, 0.5), transparent)';
+
+			disable(scrollButton[0]);
+			scrollWrapper.style.webkitMaskImage = maskImage0;
+
+			let current = 0;
+
+			function disable(button) {
+				button.setAttribute('disabled', 'true');
+				button.style.cursor = 'default';
+				button.style.opacity = '0.3';
+			};
+
+			function enable(button) {
+				button.removeAttribute('disabled');
+				button.style.cursor = 'pointer';
+				button.style.opacity = '1';
+			};
+
+			for (let i = 0; i < scrollButton.length; i++) {
+				scrollButton[i].addEventListener('click', () => {
+					i == 0 ? --current : current++;
+					scrollWrapper.scrollLeft = scrollBoxes[0].scrollWidth * (current * 2.5);
+				});
+			};
+
+			scrollWrapper.addEventListener('scroll', () => {
+				scrollButton.forEach(button => enable(button));
+				if (scrollWrapper.scrollLeft == 0) {
+					scrollWrapper.style.webkitMaskImage = maskImage0;
+					disable(scrollButton[0]);
+				}
+				else if (scrollWrapper.scrollLeft >= Math.round(scrollBoxes[0].scrollWidth * (boxes / 1.4))) {
+					scrollWrapper.style.webkitMaskImage = maskImage100;
+					disable(scrollButton[1]);
+				}
+				else {
+					scrollWrapper.style.webkitMaskImage = maskImage50;
+				}
+			});
+		</script>
 
 	</body>
 
