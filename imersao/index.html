@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	<!--índice da página da imersão-->
 
 	<head>
 		<meta charset='UTF-8'>
@@ -1131,12 +1132,434 @@
 				padding: 0.5vw 0 1.5vw;
 			}
 
+			@media screen and (max-width: 768px) {
+				.content-default {
+					max-width: 100% !important;
+				}
+
+				.header {
+					padding: 10vw 2vw 23vw 2vw;
+				}
+
+				.header .content .content-default .container {
+					width: 100%;
+				}
+
+				.header .content .content-default .container h2 {
+					font-size: 3vw;
+					max-width: 100%;
+					margin: 2vw;
+				}
+
+				.header .content .content-default .container img {
+					width: 100%;
+				}
+
+				.header .content .content-default .box {
+					padding: 3vw 0;
+				}
+
+				.header .content .content-default .box .wrapper {
+					align-items: center;
+					width: 90%;
+				}
+
+				.header .content .content-default .box .wrapper .container {
+					width: 100%;
+				}
+
+				.header .content .content-default .box .wrapper .container img {
+					width: 4vw;
+					margin: 1vw auto;
+				}
+
+				.header .content .content-default .box .wrapper .container i {
+					font-size: 4vw;
+				}
+
+				.header .content .content-default .box .wrapper .container span {
+					font-size: 2vw;
+					margin: 1vw 0;
+				}
+
+				.about .content .content-default {
+					display: block;
+				}
+
+				.about .content .content-default .container {
+					width: 100%;
+					margin: 3vw auto
+				}
+
+				.about .content .content-default .container h1 {
+					font-size: 5vw;
+					text-align: center;
+					margin: auto;
+					max-width: 100%;
+				}
+
+				.about .content .content-default .container p {
+					font-size: 4vw;
+					text-align: left;
+					margin: 2vw auto;
+					max-width: 90%;
+				}
+
+				.about .content .content-default .container iframe {
+					margin: 3vw auto;
+				}
+
+				.about .content .content-default .container button {
+					margin: 3vw auto;
+				}
+
+				.modulos {
+					height: 110vw;
+				}
+
+				.modulos .content .content-default {
+					padding: 5vw 0;
+				}
+
+				.modulos .content .content-default .container h2 {
+					font-size: 4vw;
+					text-align: center;
+					margin: auto;
+					max-width: 100%;
+				}
+
+				.modulos .content .content-default .container .divider {
+					display: none;
+				}
+
+				.modulos .content .content-default #scroll-buttons {
+					display: none;
+				}
+
+				.modulos .content .content-default .wrapper {
+					overflow-y: scroll;
+					max-height: 80vw;
+					margin: 3vw auto;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] {
+					flex-direction: column;
+					align-items: center;
+					width: 100%;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] .collapsible {
+					width: 100%;
+					margin: 1vw auto;
+					max-height: 15vw;
+					border-radius: 3vw;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] .collapsible .title {
+					margin: 3vw;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] .collapsible .title i {
+					font-size: 3vw;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] .collapsible h1 {
+					font-size: 4vw;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] .collapsible h2 {
+					font-size: 2.5vw;
+				}
+
+				.modulos .content .content-default .wrapper [data-collapsible=body] .collapsible .collapsible-content p {
+					font-size: 3vw;
+					margin: 2vw;
+					padding: 2vw;
+					padding-bottom: 5vw;
+				}
+
+				.bonus .content .content-default {
+					margin: 2vw;
+				}
+
+				.bonus .content .content-default .container h1 {
+					font-size: 5vw;
+					max-width: 100%;
+					text-align: center;
+					margin: auto;
+				}
+
+				.bonus .content .content-default .container p {
+					font-size: 3vw;
+				}
+
+				.bonus .content .content-default .wrapper {
+					display: block;
+				}
+
+				.bonus .content .content-default .wrapper .box {
+					width: 100%;
+					margin: 2vw auto;
+					padding: 4vw;
+					border-radius: 3vw;
+				}
+
+				.bonus .content .content-default .wrapper .box h2 {
+					font-size: 4vw;
+				}
+
+				.bonus .content .content-default .wrapper .box p {
+					font-size: 3vw;
+				}
+
+				.teaser .content .content-default {
+					display: block;
+				}
+
+				.teaser .content .content-default .container {
+					width: 100%;
+					margin: 2vw auto;
+				}
+
+				.teaser .content .content-default .container .divider {
+					margin: 2vw auto;
+				}
+
+				.teaser .content .content-default .container h1 {
+					font-size: 4vw;
+					text-align: center;
+					margin: auto;
+				}
+
+				.teaser .content .content-default .container p {
+					font-size: 3vw;
+					text-align: center;
+					margin: auto;
+				}
+
+				.teaser .content .content-default .container iframe {
+					border-radius: 2vw;
+					margin: 2vw;
+				}
+
+				.teaser .content .content-default .container button {
+					margin: 2vw auto;
+				}
+
+				.depoimentos .content .content-default h1 {
+					font-size: 5vw;
+				}
+
+				.depoimentos .content .content-default .wrapper {
+					display: block;
+				}
+
+				.depoimentos .content .content-default .wrapper .box {
+					width: 90%;
+					margin: 15vw auto 1vw;
+					padding: 15vw 3vw 3vw;
+					border-radius: 3vw;
+				}
+
+				.depoimentos .content .content-default .wrapper .box p,
+				.depoimentos .content .content-default .wrapper .box span {
+					font-size: 3vw;
+				}
+
+				#investimento {
+					width: 90%;
+					padding: 10vw 0;
+					border-radius: 3vw;
+				}
+
+				#investimento h1 {
+					font-size: 10vw;
+					margin: 3vw auto;
+				}
+
+				#investimento h2 {
+					font-size: 5vw;
+				}
+
+				#investimento p {
+					font-size: 2vw;
+					margin: 2vw auto;
+				}
+
+				#investimento .bee-button span {
+					font-size: 5vw;
+				}
+
+				.garantia {
+					margin-top: 25vw;
+					padding-top: 45vw;
+					padding-bottom: 20vw;
+				}
+
+				.garantia img[src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/7ba73aaa-3da9-4cf1-abf2-ccc85dea5875/uid_3267458/selo_garantia.png"] {
+					width: 50vw;
+				}
+
+				.garantia .container {
+					width: 100%;
+				}
+
+				.garantia h1 {
+					font-size: 7.5vw;
+					max-width: 100%;
+				}
+
+				.garantia p {
+					font-size: 3vw;
+					margin: 3vw auto;
+				}
+
+				.garantia button {
+					font-size: 4vw;
+					width: 90%;
+				}
+
+				.bio {
+					background-size: cover;
+					padding: 10vw 0;
+					padding-bottom: 70vw;
+				}
+
+				.bio img {
+					width: 50vw;
+					left: 50%;
+					transform: translate(-50%, 0);
+				}
+
+				.bio .content .content-default .container {
+					width: 100%;
+					text-align: left;
+				}
+
+				.bio .content .content-default .container .divider {
+					display: none;
+				}
+
+				.bio .content .content-default .container h1 {
+					font-size: 6vw;
+					margin: 5vw auto;
+					text-align: center;
+				}
+
+				.bio .content .content-default .container p {
+					font-size: 4vw;
+					margin: 2vw auto;
+				}
+
+				.faq {
+					height: auto;
+					padding-bottom: 25vw;
+				}
+
+				.faq .content .content-default {
+					display: block;
+				}
+
+				.faq .content .content-default .container {
+					margin: 5vw auto;
+				}
+
+				.faq .content .content-default h1.gradient {
+					font-size: 5vw;
+					text-align: center;
+					margin: 5vw auto;
+				}
+
+				.faq .content .content-default .container h3 {
+					font-size: 3vw;
+					text-align: center;
+					margin: 2vw auto;
+				}
+
+				.faq .content .content-default .container a {
+					margin: auto;
+					justify-content: center;
+					padding: 2vw;
+					width: 100%;
+					margin: 2vw auto;
+					border-radius: 3vw;
+				}
+
+				.faq .content .content-default .container a span {
+					font-size: 3vw;
+				}
+
+				.faq .content .content-default [data-collapsible=toggle] {
+					max-height: 10vw;
+					margin: 1.5vw;
+					border-radius: 3vw;
+					width: 100%;
+				}
+
+				.faq .content .content-default [data-collapsible=toggle] h1 {
+					font-size: 3vw;
+					margin: 1.5vw;
+				}
+
+				.faq .content .content-default [data-collapsible=toggle] h1 i {
+					font-size: 3.5vw;
+				}
+
+				.faq .content .content-default [data-collapsible=content] {
+					padding: 2vw 0;
+				}
+
+				.faq .content .content-default [data-collapsible=content] p {
+					font-size: 2.8vw;
+					margin: 1vw 0 5vw 1vw;
+				}
+				.investimento {
+					
+				}
+				.investimento .content {
+
+				}
+				.investimento .content .content-default {
+
+				}
+				.investimento .content .content-default .box {
+					max-width: 100%;
+					width: 90%;
+					border-radius: 3vw;
+					padding: 5vw 2vw;
+				}
+				.investimento .content .content-default .box img {
+					max-width: 100%;
+					width: 80%;
+					margin-bottom: 12px;
+				}
+				.investimento .content .content-default .box h1 {
+					font-size: 10vw;
+				}
+				.investimento .content .content-default .box h2 {
+					font-size: 5vw;
+				}
+				.investimento .content .content-default .box button {
+					font-size: 5vw;
+					margin: 3vw 0;
+				}
+				.investimento .content .content-default .box p {
+					font-size: 3vw;
+					max-width: 100%;
+					width: 100%;
+					margin: 3vw 0;
+				}
+				.investimento .content .content-default .box img[src="https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/7ba73aaa-3da9-4cf1-abf2-ccc85dea5875/uid_3267458/pagamento.png"] {
+					max-width: 100%;
+					width: 80%;
+				}
+			}
+
 			/*# sourceMappingURL=style.css.map */
 		</style>
 	</head>
 
 	<body class="blue-grad">
-
 		<section class="header bg-white">
 			<div class="content">
 				<div class="content-default">
@@ -1747,42 +2170,10 @@
 
 		</section>
 
-		<!-- <script src='js/script.js'></script> -->
 		<script>
-			const collapsibles = document.querySelectorAll('[data-collapsible="body"]');
-			const collapsibleContent = document.querySelectorAll('[data-collapsible="content"]');
-
-			function toggleExpand(content) {
-				if (content.parentElement.style.maxHeight) {
-					content.parentElement.style.maxHeight = null;
-				} else {
-					content.parentElement.style.maxHeight = (content.scrollHeight * 1.5) + 'px';
-				}
-			}
-
-			function collapseNeighbors() {
-				for (const content of collapsibleContent) {
-					if (content.parentElement.classList.contains('active')) {
-						content.parentElement.classList.remove('active');
-						toggleExpand(content);
-					}
-				}
-			}
-
-			for (const collapsible of collapsibles)
-				collapsible.addEventListener('click', function () {
-					if (!this.classList.contains('active')) {
-						collapseNeighbors();
-					}
-					this.classList.toggle('active');
-					toggleExpand(this.lastElementChild);
-				});
-		</script>
-
-		<script>
-			const scrollWrapper = document.querySelector('[data-scroll="wrapper"]');
+			const scrollWrapper = document.querySelector('[data-collapsible="wrapper"]');
 			const scrollBoxes = document.querySelectorAll('[data-scroll="box"]');
-			const scrollButton = document.querySelectorAll('[data-scroll="buttons"] button');
+			const scrollButton = document.querySelectorAll('#scroll-buttons button');
 
 			const boxes = scrollBoxes.length;
 
@@ -1828,6 +2219,37 @@
 					scrollWrapper.style.webkitMaskImage = maskImage50;
 				}
 			});
+		</script>
+
+		<script>
+			const collapsibles = document.querySelectorAll('[data-collapsible="toggle"]');
+			const collapsibleContent = document.querySelectorAll('[data-collapsible="content"]');
+
+			function toggleExpand(content) {
+				if (content.parentElement.style.maxHeight) {
+					content.parentElement.style.maxHeight = null;
+				} else {
+					content.parentElement.style.maxHeight = (content.scrollHeight * 1.5) + 'px';
+				}
+			}
+
+			function collapseNeighbors() {
+				for (const content of collapsibleContent) {
+					if (content.parentElement.classList.contains('active')) {
+						content.parentElement.classList.remove('active');
+						toggleExpand(content);
+					}
+				}
+			}
+
+			for (const collapsible of collapsibles)
+				collapsible.addEventListener('click', function () {
+					if (!this.classList.contains('active')) {
+						collapseNeighbors();
+					}
+					this.classList.toggle('active');
+					toggleExpand(this.lastElementChild);
+				});
 		</script>
 
 	</body>
