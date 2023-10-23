@@ -10,7 +10,7 @@
         <meta property="og:url" content="https://www.palmilhasterapeuticas.com.br/[tbd]">
         <meta property="og:image" content="[tbd]">
         <link rel="stylesheet" href="src/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -502,15 +502,17 @@
                         $.ajax({
                             type: 'POST',
                             url: 'cadastro.php',
-                            data: userData
-                        });
-                        $.ajax({
-                            type: 'POST',
-                            url: 'mail.php',
                             data: userData,
                             success: function () {
-                                $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
-                                document.location = 'obrigado'
+                                $.ajax({
+                                    type: 'POST',
+                                    url: 'mail.php',
+                                    data: userData,
+                                    success: function () {
+                                        $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
+                                        document.location = "obrigado"
+                                    }
+                                });
                             }
                         });
                     }

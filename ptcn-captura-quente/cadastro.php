@@ -19,9 +19,9 @@ if (isset($_POST['user_email']) && isset($_POST['user_name'])) {
     $checkfor = $conn->query($check);
 
     if ($checkfor->num_rows > 0) {
-        echo "user_exists";
+        echo "\nuser_exists";
     } else {
-        echo "new_user";
+        echo "\nnew_user";
         $conn->query("INSERT IGNORE INTO `cadastros-quente` (email, nome) VALUES ('$email' , '$nome')");
     }
     
