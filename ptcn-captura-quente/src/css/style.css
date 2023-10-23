@@ -249,8 +249,8 @@ section {
 }
 
 .my-button:not(.box .my-button) {
-  width: 100%;
-  min-width: 390px;
+  width: 80%;
+  min-width: 256px;
   padding: 1.25rem;
   font-size: 1rem;
 }
@@ -406,104 +406,67 @@ h1, h2, h3, p, button, .container {
   aspect-ratio: 1;
   cursor: pointer;
   border-radius: 50%;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  transition: 0.2s ease-out;
+}
+[data-carousel=buttons] button:hover {
+  filter: brightness(150%);
+  transform: translateY(-1px);
+}
+[data-carousel=buttons] button:focus {
+  outline: none;
+}
+[data-carousel=buttons] button:active {
+  transform: translateY(1px);
 }
 [data-carousel=buttons] button:first-of-type {
   float: left;
+  background: url(../../public/img/svg/buttons/scroll_bttn_l.svg);
 }
 [data-carousel=buttons] button:last-of-type {
+  background: url(../../public/img/svg/buttons/scroll_bttn_r.svg);
   right: 0;
-  transform: scaleX(-1);
 }
 
-/* @media screen and (max-width: 768px) {
-    .divider.left {
-        background-image: radial-gradient(#fff, hsla(0, 0%, 100%, 0));
-        margin: 10px 0
-    }
-    [data-component=floating-buttons] {
-        aspect-ratio: 1/2;
-        bottom: 1vw;
-        flex-direction: column;
-        height: 30vw;
-        position: fixed;
-        right: 1vw;
-        z-index: 24;
-        a {
-            aspect-ratio: 1;
-            flex-basis: 50%;
-            flex-grow: 1;
-            margin: 3px;
-            position: relative;
-            transition: .3s cubic-bezier(.175, .885, .32, 1.275);
-            button {
-                aspect-ratio: 1;
-                background-position: 50%;
-                background-size: 60%;
-                border: 3px solid #fff;
-                border-radius: 50%;
-                position: absolute;
-                width: 100%
-            }
-        }
-
-    }
-
-    [data-component=floating-buttons], [data-component=floating-buttons] a {
-        align-items: center;
-        display: flex;
-        justify-content: center
-    }
-
-    [data-component=collapsible] {
-        max-height: 5.5rem;
-    }
-
-    [data-collapsible=content] {
-        p {
-            max-width: 100%;
-        }
-    }
-
-} */
 /* ---------------------------------------------- */
+#warning {
+  font-size: 0.75rem;
+  color: tomato;
+  text-align: center;
+}
+
 .header::before {
   content: "";
   position: absolute;
   background: url(../../public/img/jpg/foto-capa-publico-quente.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: top center;
   width: 100vw;
   height: 100%;
+  right: 0;
   top: 0;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 0.8;
   mask-image: linear-gradient();
-  -webkit-mask-image: linear-gradient(black, transparent 98%);
+  -webkit-mask-image: linear-gradient(black, transparent 80%);
 }
 
-.header {
-  height: 840px;
-}
 .header .content {
   position: relative;
   z-index: 2;
 }
 .header .container {
   width: 50%;
-  min-width: 360px;
-}
-
-#foto-capa {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  filter: brightness(50%);
+  min-width: 256px;
 }
 
 #logo {
   width: 40%;
-  min-width: 360px;
+  min-width: 256px;
 }
 
 .schedule::before {
@@ -539,10 +502,10 @@ h1, h2, h3, p, button, .container {
 .schedule h1, .schedule h2, .schedule p {
   margin: 1.5rem auto;
   width: 60%;
-  min-width: 360px;
+  min-width: 256px;
 }
 .schedule .container {
-  min-width: 360px;
+  min-width: 256px;
   margin: 1rem auto;
 }
 .schedule .wrapper {
@@ -589,7 +552,7 @@ h1, h2, h3, p, button, .container {
   margin: 1rem auto;
   text-align: center;
   width: 60%;
-  min-width: 360px;
+  min-width: 256px;
 }
 .sobre img {
   position: absolute;
@@ -605,7 +568,7 @@ h1, h2, h3, p, button, .container {
 }
 .sobre .box {
   width: 30%;
-  min-width: 360px;
+  min-width: 256px;
   margin: 1.5rem auto;
   justify-content: start;
   padding: 1rem;
@@ -644,7 +607,7 @@ h1, h2, h3, p, button, .container {
 }
 .praquem .container {
   width: 50%;
-  min-width: 360px;
+  min-width: 256px;
   margin: 2rem auto;
 }
 .praquem h2, .praquem p {
@@ -728,7 +691,7 @@ h1, h2, h3, p, button, .container {
   align-items: center;
   justify-content: start;
   width: 50%;
-  min-width: 360px;
+  min-width: 256px;
   padding: 0 2rem;
 }
 .pordentro .wrapper {
@@ -737,7 +700,7 @@ h1, h2, h3, p, button, .container {
 }
 .pordentro img {
   width: 75%;
-  min-width: 360px;
+  min-width: 256px;
   margin: 1rem auto;
 }
 .pordentro .my-button {
@@ -759,7 +722,7 @@ h1, h2, h3, p, button, .container {
   border: none;
   border-radius: 12px;
   transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  min-width: 300px;
+  min-width: 256px;
   min-height: 580px;
   margin: 0 12px;
   cursor: pointer;
@@ -788,7 +751,7 @@ h1, h2, h3, p, button, .container {
 }
 .curso-att h2, .curso-att p, .kit h2, .kit p, .live h2, .live p, .mentoria h2, .mentoria p {
   width: 80%;
-  min-width: 360px;
+  min-width: 256px;
 }
 .curso-att h2, .kit h2, .live h2, .mentoria h2 {
   font-weight: 900;
@@ -796,7 +759,7 @@ h1, h2, h3, p, button, .container {
 }
 .curso-att .container, .kit .container, .live .container, .mentoria .container {
   width: 50%;
-  min-width: 360px;
+  min-width: 256px;
   align-items: center;
 }
 .curso-att img, .kit img, .live img, .mentoria img {
@@ -827,7 +790,7 @@ h1, h2, h3, p, button, .container {
   font-size: 1rem;
   margin: 1rem auto;
   width: 60%;
-  min-width: 360px;
+  min-width: 256px;
 }
 
 #garantia {
@@ -863,7 +826,7 @@ h1, h2, h3, p, button, .container {
 }
 .andre-sobre .container {
   width: 50%;
-  min-width: 360px;
+  min-width: 256px;
 }
 .andre-sobre p {
   font-size: 1.2rem;
@@ -883,7 +846,7 @@ h1, h2, h3, p, button, .container {
 }
 .faq .container {
   width: 50%;
-  min-width: 360px;
+  min-width: 256px;
 }
 .faq .container h2, .faq .container p {
   width: 75%;
@@ -919,22 +882,50 @@ h1, h2, h3, p, button, .container {
 
 @media screen and (max-width: 1280px) {
   .header::before {
+    height: 100%;
+    background-position: right;
     mask-image: linear-gradient();
     -webkit-mask-image: linear-gradient(black, transparent 80%);
   }
+  .schedule .container {
+    min-width: 0;
+  }
+  .schedule .wrapper .box {
+    padding: 1rem;
+  }
+  .schedule .wrapper .box p {
+    margin: 0;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .andre-sobre {
+    background-position-x: 75%;
+  }
+  .andre-sobre .container {
+    backdrop-filter: blur(30px);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  #whatsapp-contato {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
   .content-default {
     width: 90%;
   }
   .header::before {
-    top: auto;
-    bottom: 0;
+    top: 0;
     background-size: cover;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
     background: url(../../public/img/png/chuva-palmilhas.png);
     background-repeat: repeat;
-    filter: blur(5px);
+    filter: blur(10px);
     opacity: 0.6;
     mask-image: linear-gradient();
     -webkit-mask-image: linear-gradient(black, transparent 80%);
@@ -956,6 +947,11 @@ h1, h2, h3, p, button, .container {
   .header .box {
     margin: 2rem auto;
   }
+  .header button img {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+  }
   .my-button:not(.box .my-button) {
     width: 100%;
     min-width: 0;
@@ -966,8 +962,18 @@ h1, h2, h3, p, button, .container {
   [data-carousel=buttons] {
     display: none;
   }
+  .schedule .container {
+    min-width: 0;
+    width: 100%;
+  }
   .curso-att, .kit, .live, .mentoria {
+    text-align: left;
+  }
+  .curso-att h2, .kit h2, .live h2, .mentoria h2 {
     text-align: center;
+  }
+  .curso-att .wrapper, .kit .wrapper, .live .wrapper, .mentoria .wrapper {
+    margin: auto;
   }
   .curso-att .container, .kit .container, .live .container, .mentoria .container {
     margin: 2rem auto;
@@ -975,6 +981,35 @@ h1, h2, h3, p, button, .container {
   .praquem ul {
     margin: 0;
     transform: translateX(-5%);
+  }
+  .live p {
+    text-align: center;
+  }
+  .pordentro .top h1 {
+    font-size: 1.5rem;
+  }
+  .pordentro .content {
+    padding-top: 72px;
+  }
+  .pordentro .content h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .napratica [data-component=carousel] ul {
+    justify-content: start;
+  }
+  .napratica [data-carousel=tile] {
+    background-position: center;
+  }
+  .garantia::before {
+    min-width: 0;
+    width: 80%;
+    height: 48px;
+    top: -28px;
+  }
+  #garantia {
+    max-width: 240px;
+    left: 50%;
   }
   .andre-sobre {
     background-image: none;
@@ -984,6 +1019,38 @@ h1, h2, h3, p, button, .container {
   .faq p, .faq h2, .faq a {
     width: 100%;
     min-width: 100%;
+  }
+  [data-collapsible=title] {
+    padding-right: 0;
+  }
+  [data-collapsible=title] h1 {
+    font-size: 1rem;
+  }
+  [data-collapsible=title]::after {
+    right: 0;
+    top: 0.25rem;
+    transform: none;
+  }
+  #whatsapp-contato span {
+    font-size: 0.8rem;
+  }
+  #whatsapp-contato span::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    left: -1.75rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  [data-collapsible=title] {
+    padding-right: 0;
+  }
+  [data-collapsible=title] h1 {
+    font-size: 0.8rem;
+  }
+  [data-collapsible=title]::after {
+    right: 0;
+    top: 0.25rem;
+    transform: none;
   }
 }
 

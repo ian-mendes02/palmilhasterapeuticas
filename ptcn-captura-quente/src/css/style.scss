@@ -263,8 +263,8 @@ section {
 }
 
 .my-button:not(.box .my-button) {
-    width: 100%;
-    min-width: 390px;
+    width: 80%;
+    min-width: 256px;
     padding: 1.25rem;
     font-size: 1rem;
 }
@@ -423,107 +423,71 @@ h1, h2, h3, p, button, .container {
         aspect-ratio: 1;
         cursor: pointer;
         border-radius: 50%;
+        border: none;
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+        transition: 0.2s ease-out;
+        &:hover {
+            filter: brightness(150%);
+            transform: translateY(-1px);
+        }
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: translateY(1px);
+        }
     }
     button:first-of-type {
         float: left;
+        background: url(../../public/img/svg/buttons/scroll_bttn_l.svg);
     }
     button:last-of-type {
+        background: url(../../public/img/svg/buttons/scroll_bttn_r.svg);
         right: 0;
-        transform: scaleX(-1);
     }
 }
 
-/* @media screen and (max-width: 768px) {
-    .divider.left {
-        background-image: radial-gradient(#fff, hsla(0, 0%, 100%, 0));
-        margin: 10px 0
-    }
-    [data-component=floating-buttons] {
-        aspect-ratio: 1/2;
-        bottom: 1vw;
-        flex-direction: column;
-        height: 30vw;
-        position: fixed;
-        right: 1vw;
-        z-index: 24;
-        a {
-            aspect-ratio: 1;
-            flex-basis: 50%;
-            flex-grow: 1;
-            margin: 3px;
-            position: relative;
-            transition: .3s cubic-bezier(.175, .885, .32, 1.275);
-            button {
-                aspect-ratio: 1;
-                background-position: 50%;
-                background-size: 60%;
-                border: 3px solid #fff;
-                border-radius: 50%;
-                position: absolute;
-                width: 100%
-            }
-        }
-        
-    }
-
-    [data-component=floating-buttons], [data-component=floating-buttons] a {
-        align-items: center;
-        display: flex;
-        justify-content: center
-    }
-
-    [data-component=collapsible] {
-        max-height: 5.5rem;
-    }
-
-    [data-collapsible=content] {
-        p {
-            max-width: 100%;
-        }
-    }
-
-} */
-
 /* ---------------------------------------------- */
+
+#warning {
+    font-size: 0.75rem;
+    color: tomato;
+    text-align: center;
+}
 
 .header::before {
     content: '';
     position: absolute;
     background: url(../../public/img/jpg/foto-capa-publico-quente.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: top center;
     width: 100vw;
     height: 100%;
+    right: 0;
     top: 0;
     z-index: 1;
-    opacity: 0.5;
+    opacity: 0.8;
     mask-image: linear-gradient();
-    -webkit-mask-image: linear-gradient(black, transparent 98%);
+    -webkit-mask-image: linear-gradient(black, transparent 80%);
 }
 
 .header {
-    height: 840px;
     .content {
         position: relative;
         z-index: 2;
     }
     .container {
         width: 50%;
-        min-width: 360px;
+        min-width: 256px;
     }
-}
-
-#foto-capa {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    filter: brightness(50%);
 }
 
 #logo {
     width: 40%;
-    min-width: 360px;
+    min-width: 256px;
 }
 
 .schedule::before {
@@ -558,10 +522,10 @@ h1, h2, h3, p, button, .container {
     h1, h2, p {
         margin: 1.5rem auto;
         width: 60%;
-        min-width: 360px;
+        min-width: 256px;
     }
     .container {
-        min-width: 360px;
+        min-width: 256px;
         margin: 1rem auto;
     }
     .wrapper {
@@ -608,7 +572,7 @@ h1, h2, h3, p, button, .container {
         margin: 1rem auto;
         text-align: center;
         width: 60%;
-        min-width: 360px;
+        min-width: 256px;
     }
     img {
         position: absolute;
@@ -624,7 +588,7 @@ h1, h2, h3, p, button, .container {
     }
     .box {
         width: 30%;
-        min-width: 360px;
+        min-width: 256px;
         margin: 1.5rem auto;
         justify-content: start;
         padding: 1rem;
@@ -663,7 +627,7 @@ h1, h2, h3, p, button, .container {
     z-index: 2;
     .container {
         width: 50%;
-        min-width: 360px;
+        min-width: 256px;
         margin: 2rem auto;
     }
     h2, p {text-align: center}
@@ -746,7 +710,7 @@ h1, h2, h3, p, button, .container {
         align-items: center;
         justify-content: start;
         width: 50%;
-        min-width: 360px;
+        min-width: 256px;
         padding: 0 2rem;
     }
     .wrapper {
@@ -755,7 +719,7 @@ h1, h2, h3, p, button, .container {
     }
     img {
         width: 75%;
-        min-width: 360px;
+        min-width: 256px;
         margin: 1rem auto;
     }
     .my-button {
@@ -780,7 +744,7 @@ h1, h2, h3, p, button, .container {
         border: none;
         border-radius: 12px;
         transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        min-width: 300px;
+        min-width: 256px;
         min-height: 580px;
         margin: 0 12px;
         cursor: pointer;
@@ -809,7 +773,7 @@ h1, h2, h3, p, button, .container {
     border-bottom: solid 1px hsla(0, 0%, 100%, .5);
     h2, p {
         width: 80%;
-        min-width: 360px;
+        min-width: 256px;
     }
     h2 {
         font-weight: 900;
@@ -817,7 +781,7 @@ h1, h2, h3, p, button, .container {
     }
     .container {
         width: 50%;
-        min-width: 360px;
+        min-width: 256px;
         align-items: center;
     }
     img {
@@ -848,7 +812,7 @@ h1, h2, h3, p, button, .container {
         font-size: 1rem;
         margin: 1rem auto;
         width: 60%;
-        min-width: 360px;
+        min-width: 256px;
     }
 }
 
@@ -884,7 +848,7 @@ h1, h2, h3, p, button, .container {
     padding-bottom: 120px;
     .container {
         width: 50%;
-        min-width: 360px;
+        min-width: 256px;
     }
     p {
         font-size: 1.2rem;
@@ -904,7 +868,7 @@ h1, h2, h3, p, button, .container {
     }
     .container {
         width: 50%;
-        min-width: 360px;
+        min-width: 256px;
         h2, p {
             width: 75%;
         }
@@ -941,23 +905,57 @@ h1, h2, h3, p, button, .container {
 
 @media screen and (max-width: 1280px) {
     .header::before {
+        height: 100%;
+        background-position: right;
         mask-image: linear-gradient();
         -webkit-mask-image: linear-gradient(black, transparent 80%);
+    }
+    .schedule {
+        .container {
+            min-width: 0;
+        }
+        .wrapper {
+            .box {
+                padding: 1rem;
+                p {
+                    margin: 0;
+                    font-size: .9rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .andre-sobre {
+        background-position-x: 75%;
+        .container {
+            backdrop-filter: blur(30px);
+            padding: 1rem;
+            border-radius: 12px;
+        }
+    }
+    #whatsapp-contato {
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 768px) {
+
+    .container {
+        width: 100% !important;
+    }
+
     .content-default {
         width: 90%;
     }
     .header::before {
-        top:auto;
-        bottom: 0;
+        top: 0;
         background-size: cover;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
         background: url(../../public/img/png/chuva-palmilhas.png);
         background-repeat: repeat;
-        filter: blur(5px);
+        filter: blur(10px);
         opacity: 0.6;
         mask-image: linear-gradient();
         -webkit-mask-image: linear-gradient(black, transparent 80%);
@@ -978,6 +976,11 @@ h1, h2, h3, p, button, .container {
         .box {
             margin: 2rem auto;
         }
+        button img {
+            width: 24px;
+            height: 24px;
+            margin: auto;
+        }
     }
     .my-button:not(.box .my-button) {
         width: 100%;
@@ -989,8 +992,20 @@ h1, h2, h3, p, button, .container {
     [data-carousel=buttons] {
         display: none;
     }
+    .schedule {
+        .container {
+            min-width: 0;
+            width: 100%;
+        }
+    }
     .curso-att, .kit, .live, .mentoria {
-        text-align: center;
+        text-align: left;
+        h2 {
+            text-align: center;
+        }
+        .wrapper {
+            margin: auto;
+        }
         .container {
             margin: 2rem auto;
         }
@@ -1001,6 +1016,51 @@ h1, h2, h3, p, button, .container {
             transform: translateX(-5%);
         }
     }
+
+    .live {
+        p {
+            text-align: center;
+        }
+    }
+
+    .pordentro {
+        .top {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+        .content {
+            padding-top: 72px;
+            h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .napratica {        
+        [data-component=carousel] {
+            ul {
+                justify-content: start;
+            }
+        }
+        [data-carousel=tile] {
+            background-position: center;
+        }
+    }
+
+    .garantia::before {
+        min-width: 0;
+        width: 80%;
+        height: 48px;
+        top: -28px;
+    }
+
+    #garantia {
+        max-width: 240px;
+        left: 50%;
+    }
+
     .andre-sobre {
         background-image: none;
         background-color: #083b52;
@@ -1011,6 +1071,39 @@ h1, h2, h3, p, button, .container {
         p, h2, a {
             width: 100%;
             min-width: 100%;
+        }
+    }
+    [data-collapsible=title] {
+        padding-right: 0;
+        h1 {
+            font-size: 1rem;
+        }
+        &::after {
+            right: 0;
+            top: .25rem;
+            transform: none;
+        }
+    }
+    #whatsapp-contato span {
+        font-size: .8rem;
+        &::before {
+            width: 1.5rem;
+            height: 1.5rem;
+            left: -1.75rem;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    [data-collapsible=title] {
+        padding-right: 0;
+        h1 {
+            font-size: .8rem;
+        }
+        &::after {
+            right: 0;
+            top: .25rem;
+            transform: none;
         }
     }
 }
