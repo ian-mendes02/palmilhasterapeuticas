@@ -722,12 +722,13 @@ h1, h2, h3, p, button, .container {
   border: none;
   border-radius: 12px;
   transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  min-width: 256px;
+  min-width: 300px;
   min-height: 580px;
   margin: 0 12px;
   cursor: pointer;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .napratica [data-carousel=tile] img {
   border-radius: inherit;
