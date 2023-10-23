@@ -30,7 +30,7 @@ $mail->msgHTML(file_get_contents('mail/confirmacao.html'), __DIR__);
 if (!empty($_POST['user_name']) && !empty($_POST['user_email'])) {    
     $nome = $_POST['user_name'];
     $email = $_POST['user_email'];
-    $mail->addAddress($mail, $nome);
+    $mail->addAddress($email, $nome);
     if (!$mail->send()) {
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     } else {
