@@ -8,4 +8,5 @@ $response = $client->request('POST', 'https://api.rd.services/auth/token?token_b
     'content-type' => 'application/json',
   ],
 ]);
+echo $response->getBody();
 ?>
