@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script>
+            const settings = {
+                async: true,
+                crossDomain: true,
+                url: 'https://api.rd.services/auth/token?token_by=code',
+                method: 'POST',
+                headers: {
+                    accept: 'application/json',
+                    'content-type': 'application/json'
+                },
+                processData: false,
+                data: '{"client_id":"09e82c62-dab7-4e15-91fb-e2b94ef9a137","client_secret":"a3a940508f0a40d4b4ad8989dbe37fdb","code":"c9889b35ec9255b9b5ed70aa14e9a89e"}'
+            };
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
