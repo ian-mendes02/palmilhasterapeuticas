@@ -6,7 +6,7 @@ $mail = new PHPMailer;
 $mail->CharSet = "UTF-8";
 $mail->Encoding = 'base64';
 $mail->isSMTP();
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 0;
 $mail->Host = 'smtp.hostinger.com';
 $mail->Port = 587;
 $mail->SMTPAuth = true;
