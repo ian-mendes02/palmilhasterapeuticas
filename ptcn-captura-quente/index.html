@@ -12,6 +12,16 @@
         <link rel="shortcut icon" href="public/img/ico/imersao-icon-new.ico" type="image/x-icon">
         <link rel="stylesheet" href="public/css/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-5TTGRP4');</script>
+        <!-- End Google Tag Manager -->
     </head>
 
     <body>
@@ -476,6 +486,12 @@
         </section>
 
         <script src="src/js/components.js"></script>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TTGRP4"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         <script>
             $(document).ready(function () {
                 $('#subscribe').submit(function (e) {
@@ -503,7 +519,7 @@
                                     success: function (data) {
                                         console.log(data);
                                         $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
-                                        document.location = "obrigado"
+                                        document.location = "obrigado";
                                     }
                                 });
                             }
