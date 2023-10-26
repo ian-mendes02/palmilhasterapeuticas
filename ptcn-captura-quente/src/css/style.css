@@ -9,7 +9,7 @@
   --white: #D7EEFF;
   --boxShadow1: rgba(0, 0, 0, .1) 0px 5px 7.5px -1.5px, rgba(0, 0, 0, .05) 0px 2px 3px -1px;
   --boxShadow2: rgba(0, 0, 0, .24) 0px 3px 8px;
-  --3dShadow: 0px 6px 0px 0px rgba(13, 67, 92, 0.75);
+  --shadow3d: 0px 6px 0px 0px rgba(13, 67, 92, 0.75);
   --gradient: linear-gradient(to right, var(--cor3), var(--cor4), var(--cor5));
   --boxBg: linear-gradient(15deg, var(--cor2), var(--cor3));
   font-size: 12pt;
@@ -148,14 +148,14 @@ input:focus {
 }
 
 .my-button {
-  background-color: var(--colorAccent);
+  background-color: var(--color5);
   background-image: linear-gradient(45deg, var(--cor3), var(--cor5));
   background-position: 0;
   background-size: 150%;
   border: none;
   border-top: solid 1px var(--white);
   border-radius: 12px;
-  box-shadow: var(--3dShadow);
+  box-shadow: var(--shadow3d);
   color: #fff;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
@@ -322,7 +322,7 @@ h1, h2, h3, p, button, .container {
   border-top: solid 1px var(--white);
   background-color: var(--cor2);
   background-image: var(--boxBg);
-  box-shadow: var(--3dShadow);
+  box-shadow: var(--shadow3d);
 }
 [data-component=collapsible]:hover {
   filter: brightness(95%);
@@ -331,7 +331,7 @@ h1, h2, h3, p, button, .container {
 }
 [data-component=collapsible].active {
   filter: brightness(100%);
-  box-shadow: var(--3dShadow);
+  box-shadow: var(--shadow3d);
   transform: translateY(2px);
 }
 
@@ -547,6 +547,8 @@ h1, h2, h3, p, button, .container {
   align-items: stretch;
   padding-top: 48px;
   flex-flow: row wrap;
+  margin: auto;
+  justify-content: center;
 }
 .sobre h1, .sobre p {
   margin: 1rem auto;
@@ -567,9 +569,9 @@ h1, h2, h3, p, button, .container {
   border-top: solid 1px #fff;
 }
 .sobre .box {
-  width: 30%;
+  width: 40%;
   min-width: 256px;
-  margin: 1.5rem auto;
+  margin: 1.5rem;
   justify-content: start;
   padding: 1rem;
   padding-top: 2.5rem;
@@ -706,12 +708,34 @@ h1, h2, h3, p, button, .container {
 .pordentro .my-button {
   margin: 2rem 0;
 }
+.pordentro .content h1 {
+  color: var(--cor3);
+}
+.imersao {
+  background: linear-gradient(to right, #090909, #032230, #090909);
+  background-size: 150%;
+  background-position: center;
+}
+.imersao .container {
+  width: 50%;
+  min-width: 256px;
+  padding: 1rem;
+}
+.imersao .container img {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 0;
+  min-width: 256px;
+}
 
 .napratica .container {
   margin: auto;
   width: 80%;
   max-width: 1280px;
   text-align: center;
+}
+.napratica h2 {
+  font-weight: 400;
 }
 .napratica [data-component=carousel] {
   margin: 2rem auto;
@@ -758,14 +782,43 @@ h1, h2, h3, p, button, .container {
   font-weight: 900;
   font-size: 1.75rem;
 }
-.curso-att .container, .kit .container, .live .container, .mentoria .container {
+.kit .container, .live .container, .mentoria .container {
   width: 50%;
   min-width: 256px;
   align-items: center;
+  position: relative;
 }
-.curso-att img, .kit img, .live img, .mentoria img {
+.curso-att .wrapper {
   width: 80%;
-  max-width: 360px;
+  min-width: 300px;
+  margin: auto;
+}
+#palmilio{
+  width: 164px;
+  position: relative;
+  transform: translateX(-50%);
+}
+#palmilio::after {
+  content: 'Como posso ajudar?';
+  background: #30536272;
+  border: solid 1px #0986bf;
+  height: fit-content;
+  width: max-content;
+  position: absolute;
+  z-index: 5;
+  top: 48px;
+  box-shadow: var(--boxShadow1);
+  right: -100%;
+  padding: .25rem 1rem; 
+  border-radius: 24px;
+  border-bottom-left-radius: 0;
+  font-size: .8rem;
+  backdrop-filter: blur(15px);
+}
+.kit img, .live img, .mentoria img {
+  width: 100%;
+  position: relative;
+  z-index: 3;
 }
 .curso-att .wrapper, .kit .wrapper, .live .wrapper, .mentoria .wrapper {
   margin: 2rem auto;
@@ -963,15 +1016,24 @@ h1, h2, h3, p, button, .container {
   [data-carousel=buttons] {
     display: none;
   }
+  .schedule h1, .schedule h2, .schedule p {
+    text-align: left;
+    width: 100%;
+  }
+  .sobre h1, .sobre h2, .sobre p {
+    text-align: left;
+    width: 100%;
+  }
+  .sobre .box {
+    width: 100%;
+  }
   .schedule .container {
     min-width: 0;
     width: 100%;
+    text-align: left;
   }
   .curso-att, .kit, .live, .mentoria {
     text-align: left;
-  }
-  .curso-att h2, .kit h2, .live h2, .mentoria h2 {
-    text-align: center;
   }
   .curso-att .wrapper, .kit .wrapper, .live .wrapper, .mentoria .wrapper {
     margin: auto;
@@ -979,12 +1041,42 @@ h1, h2, h3, p, button, .container {
   .curso-att .container, .kit .container, .live .container, .mentoria .container {
     margin: 2rem auto;
   }
+  .kit .wrapper {
+    flex-direction: column-reverse;
+  }
+  .curso-att .wrapper {
+    width: 100%;
+    min-width: 300px;
+    margin: auto;
+  }
+  .curso-att p, .curso-att h2 {
+    width: 80%;
+    min-width: 300px;
+    margin: auto;
+    text-align: center;
+  }
+  #palmilio{
+    position: relative;
+    transform: translateX(0);
+  }
+  #palmilio img {
+    width: 256px;
+    margin: auto;
+  }
+  #palmilio::after {
+    height: 24px;
+    width: 180px;
+    top: 48px;
+    right: 64px;
+    font-size: 1rem;
+    text-align: center;
+  }
   .praquem ul {
     margin: 0;
     transform: translateX(-5%);
   }
   .live p {
-    text-align: center;
+    text-align: left;
   }
   .pordentro .top h1 {
     font-size: 1.5rem;
