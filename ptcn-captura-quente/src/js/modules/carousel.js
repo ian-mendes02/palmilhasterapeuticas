@@ -2,21 +2,39 @@ const carousels = document.querySelectorAll("[data-component='carousel']");
 for (const carousel_container of carousels) {
     let button = carousel_container.querySelectorAll("[data-carousel='buttons'] button");
     let carousel = carousel_container.querySelector("ul");
-    let tilesArray = Array.from(carousel.children);
-    let tiles = carousel.children;
+    const tiles = Array.from(carousel.children);
+    /* const tileWidth = tiles[0].clientWidth; */
+    const half =  Math.round(tiles.length/5);
 
-    let center = (tilesArray.findIndex((e) => e.offsetLeft = window.innerWidth/2 - e.clientWidth/2 && e.offsetLeft > 0)) + 1;
-    
-    const gotoPrev = () => {
-        carousel.insertBefore(tiles[tiles.length - 1].cloneNode(true), tiles[0]);
-        tiles[tiles.length - 1].remove();
+    function gotoPrev() {
+        let tiles = Array.from(carousel.children);
+        let nodes = tiles.slice(-(half))
+        for (let j = 1; j < nodes.length; j++) {
+            carousel.insertBefore(nodes[j].cloneNode(true), carousel.firstElementChild);
+            tiles[tiles.length-j].remove();
+        };
     };
-    const gotoNext = () => {
-        carousel.appendChild(tiles[0].cloneNode(true));
-        tiles[0].remove();
+    function gotoNext() {
+        let tiles = Array.from(carousel.children);
+        let nodes = tiles.slice(0, half);
+        for (let j = 0; j < nodes.length; j++) {
+            carousel.appendChild(tiles[j].cloneNode(true));
+            tiles[j].remove();
+        };
     };
+
+    function goTo(i) {
+        i == 0 ? gotoPrev() : gotoNext();
+/*         let middle = 1 + carousel.children.length/2;
+        carousel.children[middle].scrollIntoView({behavior: 'smooth', inline: 'center'}) */
+    }
+
+/*     for (let j = 0; j < tiles.length; j++) {
+        tiles[j].style.left = (tiles[j].clientWidth + 24) * j + "px"
+    }; */
+
     for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => { i == 0 ? gotoPrev() : gotoNext(); });
+        button[i].addEventListener("click", () => goTo(i));
     }
 
     for (let i = 0; i < tiles.length; i++) {
