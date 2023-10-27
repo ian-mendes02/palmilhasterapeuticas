@@ -444,7 +444,7 @@ h1, h2, h3, p, button, .container {
 .header::before {
   content: "";
   position: absolute;
-  background: url(../../public/img/jpg/foto-capa-publico-quente.jpg);
+  background: url(../../public/img/webp/foto-capa-publico-quente.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -669,7 +669,7 @@ h1, h2, h3, p, button, .container {
   position: absolute;
   height: 150%;
   width: 100%;
-  background: url(../../public/img/png/chuva-palmilhas.png);
+  background: url(../../public/img/webp/chuva-palmilhas.webp);
   top: -100px;
   z-index: 1;
   filter: blur(10px);
@@ -876,7 +876,7 @@ h1, h2, h3, p, button, .container {
 
 .andre-sobre {
   background-color: var(--cor3);
-  background-image: url(../../public/img/jpg/foto-andre-mendes.jpg);
+  background-image: url(../../public/img/webp/foto-andre-mendes.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -985,7 +985,7 @@ h1, h2, h3, p, button, .container {
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    background: url(../../public/img/png/chuva-palmilhas.png);
+    background: url(../../public/img/webp/chuva-palmilhas.webp);
     background-repeat: repeat;
     filter: blur(10px);
     opacity: 0.6;
@@ -1116,7 +1116,7 @@ h1, h2, h3, p, button, .container {
   }
   .andre-sobre::before {
     content: '';
-    background: url(../../public/img/jpg/foto-andre-mendes.jpg);
+    background: url(../../public/img/webp/foto-andre-mendes.webp);
     position: absolute;
     top: 0;
     right: 0;

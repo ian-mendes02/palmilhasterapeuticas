@@ -38,7 +38,7 @@ for (const carousel_container of carousels) {
     }
 
     for (let i = 0; i < tiles.length; i++) {
-        tiles[i].style.backgroundImage = `url(public/img/aulas/capa_${i+1}.png)`
+        tiles[i].style.backgroundImage = `url(public/img/aulas/capa_${i+1}.webp)`
     }
 
 }
