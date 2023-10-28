@@ -24,7 +24,7 @@ $(document).ready(function () {
             });
         }
     });
-    $(window).unload(function () {
+    $(window).on("beforeunload", function () {
         var t2 = Date.now();
         $.ajax({
             type: 'POST',

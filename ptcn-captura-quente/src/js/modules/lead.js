@@ -3,7 +3,7 @@ export default class Lead {
         this.event_info = {
             "event_name": "lead",
             "event_source": window.location.href,
-            "event_time": this.data(),
+            "event_time": this.date(),
             "time_spent": time_spent 
         };
         this.user_info = this.info(name, email);
