@@ -1,5 +1,7 @@
-import Lead from './modules/lead.js'
+import Lead from './modules/lead.js';
 $(document).ready(function () {
+    var t1 = Date.now();
+    var url = window.location.href;
     $('#subscribe').submit(function (e) {
         e.preventDefault();
         let input1 = $("#user_name").val();
@@ -9,25 +11,30 @@ $(document).ready(function () {
         } else {
             $("#submit").html("<img src='public/img/loading.gif'>");
             $("#warning").html("");
-            var user_data = new Lead(input1, input2, "ptcn/out23")
-            console.log(user_data);
+            var user_data = new Lead(input1, input2, "ptcn/out23", (t2 - t1));
+            var t2 = Date.now();
             $.ajax({
                 type: 'POST',
                 url: 'cadastro.php',
                 data: user_data,
-                success: function (data) {
-                    console.log(data)
-                    $.ajax({
-                        type: 'POST',
-                        url: 'mail.php',
-                        data: user_data,
-                        success: function () {
-                            $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
-                            document.location = "obrigado";
-                        }
-                    });
+                success: function () {
+                    $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
+                    document.location = "obrigado";
                 }
             });
         }
+    });
+    $(window).unload(function () {
+        var t2 = Date.now();
+        $.ajax({
+            type: 'POST',
+            url: 'log.php',
+            data: {
+                "event_type": "page_view",
+                "time_spent": (t2 - t1) / 1000,
+                "page_url": url
+            },
+            async: false
+        });
     });
 });
