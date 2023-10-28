@@ -19,23 +19,17 @@ $(document).ready(function () {
                 url: 'cadastro.php',
                 data: user_data,
                 success: function () {
-                    $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
-                    document.location = "obrigado";
+                    $.ajax({
+                        type: 'POST',
+                        url: 'mail.php',
+                        data: user_data,
+                        success: function () {
+                            $("#submit").html("QUERO GARANTIR A MINHA INSCRIÇÃO");
+                            document.location = "obrigado";
+                        }
+                    });
                 }
             });
         }
-    });
-    $(window).on("beforeunload", function () {
-        var t2 = Date.now();
-        $.ajax({
-            type: 'POST',
-            url: 'log.php',
-            data: {
-                "event_type": "page_view",
-                "time_spent": (t2 - t1),
-                "page_url": url
-            },
-            async: false
-        });
     });
 });

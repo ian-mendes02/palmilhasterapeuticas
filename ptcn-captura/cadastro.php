@@ -1,5 +1,4 @@
 <?php
-require_once('vendor/autoload.php');
 ini_set('display_errors', '1');
 $conn = new mysqli('srv1078.hstgr.io', 'u232384656_admin', '@Podal2023', 'u232384656_ptnc');
 if ($conn->connect_error) {
@@ -19,13 +18,4 @@ if (isset($_POST['user_info']['email'])) {
     } else {
         $conn->query("INSERT IGNORE INTO `cadastros` (`nome`, `sobrenome`, `email`, `hora`, `data`,`permanencia`) VALUES ('$nome', '$sobrenome', '$email', '$hora', '$data','$time_spent')");
     };
-    $conn->close();
-    $client = new \GuzzleHttp\Client();
-    $response = $client->request('POST','mail.php', [
-        'user_info'=> [
-            'nome'=> $_POST['user_info']['nome'],
-            'email'=> $_POST['user_info']['email']
-        ]
-    ]);
-    echo $response->getBody();
 }
