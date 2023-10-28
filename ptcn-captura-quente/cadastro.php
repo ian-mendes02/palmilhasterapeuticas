@@ -29,4 +29,5 @@ if (isset($_POST['user_info']['email'])) {
             ]
         ]
     ]);
+    echo $response->getBody();
 }

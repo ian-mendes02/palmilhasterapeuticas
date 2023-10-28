@@ -22,11 +22,10 @@ if (isset($_POST['user_info']['email'])) {
     $conn->close();
     $client = new \GuzzleHttp\Client();
     $response = $client->request('POST','mail.php', [
-        'body'=> [
-            'user_info'=> [
-                'nome'=> $_POST['user_info']['nome'],
-                'email'=> $_POST['user_info']['email']
-            ]
+        'user_info'=> [
+            'nome'=> $_POST['user_info']['nome'],
+            'email'=> $_POST['user_info']['email']
         ]
     ]);
+    echo $response->getBody();
 }
