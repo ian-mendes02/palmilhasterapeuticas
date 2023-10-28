@@ -9,10 +9,11 @@ $(document).ready(function () {
         if (input1 == "" || input2 == "") {
             $("#warning").html("Parece que há um ou mais campos em branco. Por favor, tente novamente");
         } else {
+            var t2 = Date.now();
+            var time_elapsed = Math.round((t2 - t1) / 1000) + "s";
             $("#submit").html("<img src='public/img/loading.gif'>");
             $("#warning").html("");
-            var user_data = new Lead(input1, input2, "ptcn/out23", (t2 - t1));
-            var t2 = Date.now();
+            var user_data = new Lead(input1, input2, "ptcn/out23", time_elapsed);
             $.ajax({
                 type: 'POST',
                 url: 'cadastro.php',
@@ -31,7 +32,7 @@ $(document).ready(function () {
             url: 'log.php',
             data: {
                 "event_type": "page_view",
-                "time_spent": (t2 - t1) / 1000,
+                "time_spent": (t2 - t1),
                 "page_url": url
             },
             async: false
