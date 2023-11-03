@@ -3,3 +3,4 @@ package-lock.json
 postcss.config.js
 node_modules
 *.Identifier
+ptcn-vendas/css/source
