@@ -18,7 +18,7 @@ const writeList = () => {
         let dp = depoimentos[i];
         let li_content = `
         \n<div class="depoimento">
-        \n\t<div class="video-wrapper">
+        \n\t<div class="video-wrapper"  playing="false">
         \n\t\t<div class="thumbnail" style="background-image: url(${dp.thumbnail})"></div>
         \n\t</div>
         \n\t<div class="text-wrapper">
@@ -32,11 +32,11 @@ const writeList = () => {
         li.innerHTML = li_content;
         d_container.appendChild(li);
     };
-    var thumbnails = d_container.querySelectorAll(".thumbnail");
-    for (let i = 0; i < thumbnails.length; i++) {
+    var v_wrapper = d_container.querySelectorAll(".video-wrapper");
+    for (let i = 0; i < v_wrapper.length; i++) {
         let dp = depoimentos[i];
-        thumbnails[i].addEventListener("click", () => thumbnails[i].parentElement.innerHTML = `\n\t\t<iframe src="${dp.iframe.src}" id="${dp.iframe.id}" allowfullscreen="true" fetchpriority="high" allow="autoplay"></iframe>`)
-    }
+        v_wrapper[i].addEventListener("click", () => v_wrapper[i].innerHTML = `\n\t\t<iframe src="${dp.iframe.src}" id="${dp.iframe.id}" allowfullscreen="true" fetchpriority="high" allow="autoplay"></iframe>`);
+    };
     countPages();
 };
 function updateList() {
