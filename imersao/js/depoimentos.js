@@ -18,8 +18,8 @@ const writeList = () => {
         let dp = depoimentos[i];
         let li_content = `
         \n<div class="depoimento">
-        \n\t<div class="video-wrapper">                                    
-        \n\t\t<iframe src="${dp.iframe.src}" id="${dp.iframe.id}" allowfullscreen="true" fetchpriority="high"></iframe>
+        \n\t<div class="video-wrapper">
+        \n\t\t<div class="thumbnail" style="background-image: url(${dp.thumbnail})"></div>
         \n\t</div>
         \n\t<div class="text-wrapper">
         \n\t\t<h1>${dp.nome}, <small>${dp.profissao}</small></h1>
@@ -32,6 +32,11 @@ const writeList = () => {
         li.innerHTML = li_content;
         d_container.appendChild(li);
     };
+    var thumbnails = d_container.querySelectorAll(".thumbnail");
+    for (let i = 0; i < thumbnails.length; i++) {
+        let dp = depoimentos[i];
+        thumbnails[i].addEventListener("click", () => thumbnails[i].parentElement.innerHTML = `\n\t\t<iframe src="${dp.iframe.src}" id="${dp.iframe.id}" allowfullscreen="true" fetchpriority="high" allow="autoplay"></iframe>`)
+    }
     countPages();
 };
 function updateList() {

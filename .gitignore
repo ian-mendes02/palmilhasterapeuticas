@@ -3,4 +3,6 @@ package-lock.json
 postcss.config.js
 node_modules
 *.Identifier
+*.map
+*.scss
 ptcn-vendas/css/source

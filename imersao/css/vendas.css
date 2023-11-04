@@ -1,0 +1,1502 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+[data-component="floating-buttons"] {
+  height: 128px;
+}
+
+@keyframes slidedown {
+  from {transform: translateY(-110%);}
+  to {transform: translateY(0)}
+}
+
+.timer-container {
+  position: fixed;
+  animation: slidedown .7s ease-out 2s forwards;
+  background: var(--boxBg);
+  transform: translateY(-110%);
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  box-shadow: var(--shadow3d);
+  z-index: 999;
+  width: 420px;
+  text-align: center;
+  border-radius: 0 0 0 12px;
+}
+
+.timer-container .my-button {
+  font-size: 1rem;
+  padding: 6px;
+  width: 100%;
+}
+
+#dismiss {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  cursor: pointer;
+}
+
+.timer-container span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.my-button {
+  width: 80%;
+  padding: 24px;
+}
+
+.warning {
+  font-size: 0.75rem;
+  color: tomato;
+  text-align: center;
+}
+
+.header::before {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  width: 100vw;
+  height: 100%;
+
+  opacity: 0.8;
+  background: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/webp/foto-capa-publico-quente.webp");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+
+  -webkit-mask-image: linear-gradient(#000, transparent 70%);
+}
+
+.header h2 {
+  margin: 24px auto;
+}
+
+#video-vendas {
+  aspect-ratio: 16/9;
+  width: 80%;
+  margin: 24px auto;
+
+  background: grey;
+  border-radius: 12px;
+}
+
+.header {
+  padding-bottom: 128px;
+  background: linear-gradient(90deg, #090909, #032230, #090909);
+  background-position: 50%;
+  background-size: 150%;
+}
+
+.header .content {
+  position: relative;
+  z-index: 2;
+}
+
+.header .container {
+  width: 60%;
+  min-width: 256px;
+  margin: auto;
+  text-align: center;
+}
+
+.header .my-button {
+  margin: 24px auto;
+  font-size: 1.5rem;
+}
+
+#logo {
+  width: 40%;
+  min-width: 256px;
+}
+
+.header h3 {
+  font-size: 1.5rem;
+}
+
+.schedule::before {
+  top: 0;
+
+  width: 128px;
+  height: 72px;
+
+  mask-image: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/svg/masks/tab_2.svg");
+  mask-repeat: no-repeat;
+}
+
+.schedule::after, .schedule::before {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: var(--cor1);
+}
+
+.schedule::after {
+  top: -32px;
+
+  width: 48px;
+  height: 48px;
+
+  background: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/svg/buttons/down-arrow-circle-blue.svg");
+  background-repeat: no-repeat;
+}
+
+.schedule {
+  text-align: center;
+  background: linear-gradient(#135, #091e32);
+}
+
+.schedule h1, .schedule h2, .schedule p {
+  width: 60%;
+  min-width: 256px;
+  margin: 1.5rem auto;
+}
+
+.schedule .container {
+  min-width: 256px;
+  margin: 1rem auto;
+}
+
+.schedule .wrapper {
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.schedule .wrapper .box {
+  justify-content: start;
+  width: 360px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.schedule .wrapper .box p {
+  min-width: 0;
+  margin: auto;
+}
+
+#cta {
+  width: 60%;
+}
+
+.sobre::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: calc(100% - 100px);
+
+  background: #083b52;
+  border-top: 1px solid hsl(0deg 0% 100% / 50%);
+  border-bottom: 1px solid hsl(0deg 0% 100% / 50%);
+}
+
+.sobre {
+  padding: 0;
+}
+
+.sobre .content-default {
+  position: relative;
+  z-index: 5;
+  padding-top: 60px;
+}
+
+.sobre .wrapper {
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: center;
+
+  margin: auto;
+  padding-top: 48px;
+}
+
+.sobre h1, .sobre p {
+  width: 60%;
+  min-width: 256px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.sobre img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 64px;
+  height: 64px;
+  padding: 0.75rem;
+
+  background: linear-gradient(#0f455e, var(--cor1));
+  border-top: 1px solid #fff;
+  border-radius: 12px;
+}
+
+.sobre .box {
+  position: relative;
+
+  justify-content: start;
+
+  width: 40%;
+  min-width: 256px;
+  margin: 1.5rem;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.sobre .box h2, .sobre .box p {
+  width: 100%;
+  min-width: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.sobre .box h2 {
+  font-weight: 800;
+}
+
+.sobre .box p {
+  font-weight: 300;
+}
+
+.praquem::before {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+  right: -120px;
+  bottom: -480px;
+
+  width: 960px;
+  height: 960px;
+
+  opacity: 0.6;
+  background: var(--cor3);
+  filter: blur(600px);
+  mix-blend-mode: screen;
+}
+
+.praquem {
+  z-index: 2;
+}
+
+.praquem .container {
+  width: 50%;
+  min-width: 256px;
+  margin: 2rem auto;
+}
+
+.praquem h2, .praquem p {
+  text-align: center;
+}
+
+.praquem .content {
+  position: relative;
+  z-index: 5;
+}
+
+.praquem ul {
+  position: relative;
+  margin-left: 12px;
+  list-style: none;
+}
+
+.praquem ul li {
+  position: relative;
+  padding-bottom: 2rem;
+  padding-left: 38px;
+}
+
+.praquem ul li::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: -1px;
+
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid var(--cor3);
+  border-radius: 100%;
+}
+
+.praquem ul li::after {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  left: 4px;
+
+  width: 12px;
+  height: 12px;
+
+  background: var(--white);
+  border-radius: 100%;
+}
+
+.praquem ul::before {
+  content: "";
+
+  position: absolute;
+  top: 12px;
+  left: 49px;
+
+  width: 1px;
+  height: 100%;
+
+  background: linear-gradient(#fff, transparent);
+}
+
+.praquem::after {
+  content: "";
+
+  position: absolute;
+  z-index: 1;
+  top: -100px;
+
+  width: 100%;
+  height: 150%;
+
+  opacity: 0.3;
+  background: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/webp/chuva-palmilhas.webp");
+  filter: blur(10px);
+
+  -webkit-mask-image: linear-gradient(#000, transparent);
+}
+
+.pordentro {
+  z-index: 3;
+  background: var(--white);
+}
+
+.pordentro .top {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  padding: 1rem;
+
+  text-align: center;
+
+  background: var(--cor3);
+}
+
+.pordentro .content {
+  padding-top: 5rem;
+  color: #083b52;
+}
+
+.pordentro .container {
+  align-items: center;
+  justify-content: start;
+
+  width: 50%;
+  min-width: 256px;
+  padding: 0 2rem;
+}
+
+.pordentro .wrapper {
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+.pordentro img {
+  width: 75%;
+  min-width: 256px;
+  margin: 1rem auto;
+}
+
+.pordentro .my-button {
+  margin: 2rem 0;
+}
+
+.pordentro .content h1 {
+  color: var(--cor3);
+}
+
+.imersao {
+  background: linear-gradient(90deg, #090909, #032230, #090909);
+  background-position: 50%;
+  background-size: 150%;
+  border-bottom: 1px solid hsl(0deg 0% 100% / 50%);
+}
+
+.imersao .container {
+  width: 50%;
+  min-width: 256px;
+  padding: 1rem;
+}
+
+.imersao .container img {
+  width: 100%;
+  min-width: 256px;
+  margin: auto auto 0;
+}
+
+.napratica .container {
+  width: 80%;
+  max-width: 1280px;
+  margin: auto;
+  text-align: center;
+}
+
+.napratica h2 {
+  font-weight: 400;
+}
+
+.napratica [data-component="carousel"] {
+  height: calc(var(--tilewidth) * 29 / 15 + 32px);
+}
+
+.napratica [data-carousel="tile"] {
+  cursor: pointer;
+
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  border: none;
+  border-radius: 12px;
+}
+
+.napratica [data-carousel="tile"] img {
+  border-radius: inherit;
+}
+
+.napratica [data-carousel="tile"]:hover {
+  transform: scale(102%);
+  border: 2px solid var(--cor5);
+  border-right: 2px solid #45f063;
+}
+
+.napratica .my-button {
+  width: 60%;
+  margin: 24px auto;
+}
+
+.curso-att, .kit, .live, .mentoria {
+  border-top: 1px solid hsl(0deg 0% 100% / 50%);
+  border-bottom: 1px solid hsl(0deg 0% 100% / 50%);
+}
+
+.curso-att, .live {
+  background: radial-gradient(circle, #083b52, #090909);
+  background-position: 40%;
+  background-size: 200%;
+}
+
+.kit, .mentoria {
+  background: radial-gradient(circle, #083b52, #090909);
+  background-position: 60%;
+  background-size: 200%;
+}
+
+.curso-att h2, .curso-att p, .kit h2, .kit p, .live h2, .live p, .mentoria h2, .mentoria p {
+  width: 80%;
+  min-width: 256px;
+}
+
+.curso-att h2, .kit h2, .live h2, .mentoria h2 {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.kit .container, .live .container, .mentoria .container {
+  position: relative;
+  align-items: center;
+  width: 50%;
+  min-width: 256px;
+}
+
+.curso-att .wrapper {
+  width: 80%;
+  min-width: 300px;
+  margin: auto;
+}
+
+#palmilio {
+  position: relative;
+  transform: translateX(-50%);
+  width: 164px;
+}
+
+#palmilio::after {
+  content: "Como posso ajudar?";
+
+  position: absolute;
+  z-index: 5;
+  top: 48px;
+  right: -100%;
+
+  width: max-content;
+  height: fit-content;
+  padding: 0.25rem 1rem;
+
+  font-size: 0.8rem;
+
+  background: rgb(48 83 98 / 44.7%);
+  backdrop-filter: blur(15px);
+  border: 1px solid #0986bf;
+  border-radius: 24px;
+  border-bottom-left-radius: 0;
+  box-shadow: var(--boxShadow1);
+}
+
+.kit img, .live img, .mentoria img {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.curso-att .wrapper, .kit .wrapper, .live .wrapper, .mentoria .wrapper {
+  margin: 2rem auto;
+}
+
+.depoimentos {
+  padding-bottom: 256px;
+}
+
+.depoimentos h2 {
+  width: 70%;
+  margin: 24px auto;
+  text-align: center;
+}
+
+#depoimentos {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#depoimentos ul {
+  overflow: hidden;
+
+  width: 100%;
+  height: 744px;
+  margin: auto;
+  padding: 0;
+
+  list-style: none;
+}
+
+#depoimentos li {
+  display: none;
+}
+
+#depoimentos li:not(li:last-of-type) {
+  margin-bottom: 12px;
+}
+
+#depoimentos .depoimento {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+  max-height: 25%;
+  margin: auto;
+  padding: 24px;
+
+  background: #11182c;
+  border: 1px solid var(--white);
+  border-radius: 12px;
+}
+
+#depoimentos .video-wrapper {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  aspect-ratio: 16/9;
+  height: 180px;
+
+  background: #000;
+  border-radius: 12px;
+}
+
+.thumbnail {
+  background-size: contain;
+  cursor: pointer;
+  position: relative;
+}
+
+.thumbnail::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  width: 50%;
+  background-image: url(../../media/playbutton.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(-50%,-50%);
+  opacity: .6;
+  transition: .2s ease;
+}
+
+#depoimentos .video-wrapper iframe, .thumbnail {
+  aspect-ratio: 16/9;
+  height: 100%;
+  margin: auto 0;
+
+  border: none;
+  border-radius: inherit;
+}
+
+#depoimentos .video-wrapper:hover .thumbnail::after {
+  opacity: .8;
+}
+
+#depoimentos .text-wrapper {
+  margin: auto 0;
+  padding-left: 24px;
+}
+
+#depoimentos .text-wrapper h1 {
+  font-size: 1.5rem;
+}
+
+#depoimentos .text-wrapper p {
+  font-size: 0.9rem;
+}
+
+#depoimentos .text-wrapper small {
+  font-weight: 400;
+}
+
+#d_buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 105%;
+  height: 64px;
+}
+
+#d_buttons button {
+  cursor: pointer;
+
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+
+  transition: 0.2s ease;
+}
+
+#d_buttons button:hover {
+  filter: brightness(150%);
+}
+
+#d_buttons button:first-of-type {
+  background-image: url("https://cdn.palmilhando.com.br/media/img/svg/scroll_bttn_l.svg");
+}
+
+#d_buttons button:last-of-type {
+  background-image: url("https://cdn.palmilhando.com.br/media/img/svg/scroll_bttn_r.svg");
+}
+
+#page_counter {
+  display: flex;
+  justify-content: center;
+}
+
+#page_counter .bullet {
+  transform: scale(90%);
+
+  width: 12px;
+  height: 12px;
+  margin: 6px;
+
+  opacity: 0.6;
+  background: #0986bf;
+  border-radius: 24px;
+
+  transition: 0.2s ease-in;
+}
+
+#page_counter .bullet.active {
+  transform: none;
+  width: 24px;
+  opacity: 1;
+}
+
+.garantia {
+  padding-top: 120px;
+  padding-bottom: 30px;
+
+  color: var(--cor1);
+  text-align: center;
+
+  background-color: var(--white);
+}
+
+.garantia h2 {
+  margin: 1rem auto;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.garantia p {
+  width: 60%;
+  min-width: 256px;
+  margin: 1rem auto;
+  font-size: 1rem;
+}
+
+#garantia {
+  top: -180px;
+  width: 240px;
+}
+
+#garantia, .garantia::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.garantia::before {
+  content: "";
+
+  top: -60px;
+
+  width: 100%;
+  min-width: 768px;
+  max-width: 1280px;
+  height: 72px;
+
+  background: var(--white);
+  clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+}
+
+.andre-sobre {
+  padding-top: 180px;
+  padding-bottom: 120px;
+
+  background-color: var(--cor3);
+  background-image: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/webp/foto-andre-mendes.webp");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.andre-sobre .container {
+  width: 50%;
+  min-width: 256px;
+}
+
+.andre-sobre p {
+  font-size: 1.2rem;
+}
+
+.faq {
+  background: linear-gradient(135deg, #0f455e, #090909);
+  background-size: 200%;
+  border-top: 1px solid hsl(0deg 0% 100% / 50%);
+}
+
+.faq .my-button {
+  width: 60%;
+  margin: 0;
+  padding: 1rem;
+}
+
+.faq .content-default {
+  max-width: 1440px;
+}
+
+.faq .wrapper {
+  align-items: start;
+}
+
+.faq .container {
+  width: 50%;
+  min-width: 256px;
+}
+
+.faq .container h2, .faq .container p {
+  width: 75%;
+}
+
+.faq .container h2 {
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+
+[data-collapsible="body"] {
+  width: 50%;
+}
+
+[data-component="collapsible"] {
+  margin-bottom: 1rem;
+}
+
+#whatsapp-contato {
+  cursor: pointer;
+
+  width: 60%;
+  margin: 1.5rem 0;
+  padding: 1rem;
+
+  transition: 0.2s ease-out;
+}
+
+#whatsapp-contato:hover {
+  filter: brightness(125%);
+}
+
+#whatsapp-contato span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+#whatsapp-contato span img {
+  width: 32px;
+  height: 32px;
+  margin: auto 1rem auto 0;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(100%);
+  }
+
+  25% {
+    transform: scale(90%);
+  }
+
+  50% {
+    transform: scale(105%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.bounce {
+  animation: bounce 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.assine {
+  padding-bottom: 64px;
+
+  background: linear-gradient(90deg, #090909, #032230);
+  background-position: 100%;
+  background-size: 150%;
+  border-bottom: 1px solid hsl(0deg 0% 100% / 50%);
+}
+
+.assine img {
+  opacity: .5;
+  width: 50%;
+  margin: 12px;
+}
+
+.assine p {
+  font-size: .8rem;
+  opacity: .8;
+  width: 80%;
+  text-align: center;
+}
+
+.assine .content {
+  position: relative;
+  z-index: 5;
+}
+
+.assine .container {
+  width: 50%;
+}
+
+.assine .wrapper {
+  flex-flow: row wrap;
+  align-items: flex-start;
+  padding-top: 64px;
+}
+
+.assine h1 {
+  margin: auto;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.assine ul {
+  position: relative;
+  margin-left: 12px;
+  list-style: none;
+}
+
+.assine li {
+  position: relative;
+  width: 80%;
+  padding-bottom: 2rem;
+  padding-left: 38px;
+}
+
+.assine li::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -1px;
+
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid var(--cor3);
+  border-radius: 100%;
+}
+
+.assine ul::before {
+  content: "";
+
+  position: absolute;
+  top: 12px;
+  left: 49px;
+
+  width: 1px;
+  height: 100%;
+
+  background: linear-gradient(#fff, transparent);
+}
+
+.assine li::after {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: 4px;
+
+  width: 12px;
+  height: 12px;
+
+  background: var(--white);
+  border-radius: 100%;
+}
+
+.assine .box {
+  padding: 2rem;
+  padding-bottom: 32px;
+  box-shadow: var(--boxShadow2);
+}
+
+.assine .box .wrapper {
+  align-items: stretch;
+}
+
+.assine .box .my-button {
+  width: 100%;
+  margin: 2rem 0;
+  font-size: 1.25rem;
+  box-shadow: 0 0 60px -3px rgb(17 233 222 / 50%);
+}
+
+.assine .box h1 {
+  margin: 0.5rem auto;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.assine .box small {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.assine::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 90%;
+  height: 90%;
+
+  opacity: 0.05;
+  background: url("https://www.palmilhando.com.br/cdn/media/img/svg/imersao-icone.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: screen;
+}
+
+@media screen and (width <=1280px) {
+  .header::before {
+    height: 100%;
+    background-position: top right;
+    background-size: 125%;
+
+    -webkit-mask-image: linear-gradient(#000, transparent 60%);
+  }
+
+  .schedule .container {
+    min-width: 0;
+  }
+
+  .schedule .wrapper {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .schedule .wrapper .box {
+    padding: 1rem;
+  }
+
+  .schedule .wrapper .box p {
+    width: 100%;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .andre-sobre {
+    background-position-x: 75%;
+  }
+
+  .andre-sobre .container {
+    padding: 1rem;
+    backdrop-filter: blur(30px);
+    border-radius: 12px;
+  }
+
+  #whatsapp-contato {
+    width: 80%;
+  }
+}
+
+@media screen and (width <=820px) {
+  .timer-container {
+      position: fixed;
+      animation: none;
+      background: var(--boxBg);
+      transform: none;
+      top: auto;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100vw;
+      padding: 3rem 1rem 1rem;
+      box-shadow: none;
+      z-index: 999;
+      text-align: center;
+      border-radius: 0;
+    }
+  
+    .timer-container .my-button {
+      font-size: 1rem;
+      width: 100%;
+    }
+  
+    .timer-container span {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+  .container {
+    width: 100% !important;
+  }
+
+  .content-default {
+    width: 90%;
+  }
+
+  .header::before {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100vw;
+
+    opacity: 0.6;
+    background: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/webp/chuva-palmilhas.webp");
+    background-repeat: repeat;
+    background-size: cover;
+    filter: blur(10px);
+
+    mask-image: linear-gradient(#000, transparent 80%);
+  }
+
+  .wrapper {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .container {
+    margin: auto;
+  }
+
+  .header {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .header img {
+    width: 80%;
+  }
+
+  .header .box, .header img {
+    margin: 2rem auto;
+  }
+
+  .header button img {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+  }
+
+  #video-vendas {
+    width: 100%;
+  }
+
+  .my-button:not(.box .my-button) {
+    width: 100%;
+    min-width: 0;
+    margin: 2rem auto;
+    padding: 24px;
+
+    font-size: 1rem;
+  }
+
+  .schedule .wrapper .box {
+    width: 100%;
+  }
+
+  [data-carousel="buttons"] {
+    display: none;
+  }
+
+  .schedule h1, .schedule h2, .schedule p, .sobre h1, .sobre h2, .sobre p {
+    width: 100%;
+    text-align: left;
+  }
+
+  .sobre .box {
+    width: 100%;
+  }
+
+  .schedule .container {
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .news {
+    padding-bottom: 0;
+  }
+
+  .curso-att, .kit, .live, .mentoria {
+    text-align: left;
+  }
+
+  .curso-att .wrapper, .kit .wrapper, .live .wrapper, .mentoria .wrapper {
+    width: 100%;
+    margin: auto;
+  }
+
+  .curso-att .container, .kit .container, .live .container, .mentoria .container {
+    margin: auto;
+    padding: 0 2rem;
+  }
+
+  .kit .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  #palmilio {
+    position: relative;
+    transform: translateX(0);
+  }
+
+  #palmilio img {
+    width: 60vw;
+    margin: 0;
+  }
+
+  #palmilio::after {
+    top: 0;
+    right: 32px;
+
+    width: 25vw;
+    height: min-content;
+
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .praquem ul {
+    transform: translateX(-5%);
+    margin: 0;
+  }
+
+  .live p {
+    text-align: left;
+  }
+
+  .pordentro .top h1 {
+    font-size: 1.5rem;
+  }
+
+  .pordentro .content {
+    padding-top: 72px;
+  }
+
+  .pordentro .content h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .napratica [data-component="carousel"] {
+    height: 70vh;
+  }
+
+  .napratica [data-component="carousel"] ul {
+    justify-content: start;
+  }
+
+  .napratica .container .my-button {
+    width: 80%;
+    margin: 24px auto;
+  }
+
+  .napratica [data-carousel="tile"] {
+    width: 256px;
+    height: 494.9333333333px;
+    background-position: 50%;
+  }
+
+  .garantia::before {
+    top: -28px;
+    width: 80%;
+    min-width: 0;
+    height: 48px;
+  }
+
+  #garantia {
+    left: 50%;
+    max-width: 240px;
+  }
+
+  .andre-sobre {
+    padding: 120vw 0 0;
+    background-color: #083b52;
+    background-image: none;
+  }
+
+  .andre-sobre .container {
+    backdrop-filter: none;
+  }
+
+  .andre-sobre::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 100%;
+
+    background: url("https://www.palmilhasterapeuticas.com.br/ptcn-captura-quente/public/img/webp/foto-andre-mendes.webp");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: 200%;
+  }
+
+  .faq a, .faq h2, .faq p {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  [data-component="collapsible"] {
+    max-height: 2.5rem;
+  }
+
+  [data-collapsible="body"] {
+    width: 100%;
+  }
+
+  [data-collapsible="title"] {
+    padding-right: 0;
+  }
+
+  [data-collapsible="title"] h1 {
+    font-size: 1rem;
+  }
+
+  [data-collapsible="title"]::after {
+    top: 0.25rem;
+    right: 0;
+    transform: none;
+  }
+
+  .curso-att h2, .curso-att p, .kit h2, .kit p, .live h2, .live p, .mentoria h2, .mentoria p {
+    width: 100%;
+  }
+
+  #whatsapp-contato span {
+    font-size: 0.8rem;
+  }
+
+  #whatsapp-contato span::before {
+    left: -1.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  #cta {
+    width: 80%;
+  }
+
+  .assine .box {
+    padding: 1rem;
+  }
+
+  .assine .box h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (width <=820px) {
+  .depoimentos {
+    padding-bottom: 240px;
+  }
+
+  #depoimentos {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #depoimentos ul {
+    overflow-x: scroll;
+    display: flex;
+    align-items: stretch;
+
+    height: fit-content;
+    margin: auto;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  #depoimentos li {
+    display: flex;
+    height: 100%;
+  }
+
+  #depoimentos li:not(li:last-of-type) {
+    margin-right: 18px;
+    margin-bottom: 0;
+  }
+
+  #depoimentos .depoimento {
+    flex-direction: column;
+    justify-content: start;
+
+    width: 90vw;
+    height: 520px;
+    margin: auto;
+    padding: 12px;
+
+    background: #11182c;
+    border: 1px solid var(--white);
+    border-radius: 12px;
+  }
+
+  #depoimentos .video-wrapper {
+    width: 100%;
+    height: min-content;
+    background: transparent;
+  }
+
+  #depoimentos .video-wrapper iframe {
+    width: calc(90vw - 24px);
+    height: calc(50.625vw - 24px);
+    margin: auto;
+    border-radius: 6px;
+  }
+
+  #depoimentos .text-wrapper {
+    margin: 0;
+    padding: 6px;
+    padding-left: 0;
+    line-height: 24px;
+  }
+
+  #depoimentos .text-wrapper h1 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  #depoimentos .text-wrapper p {
+    font-size: 0.9rem;
+  }
+
+  #depoimentos .text-wrapper small {
+    font-weight: 400;
+  }
+
+  #page_counter, #d_buttons, [data-component="floating-buttons"] {
+    display: none;
+  }
+
+}
+
+@media screen and (width <=320px) {
+  :root {
+    font-size: 10pt;
+  }
+
+  .box, .container {
+    min-width: 0 !important;
+  }
+
+  [data-collapsible="title"] {
+    padding-right: 0;
+  }
+
+  [data-collapsible="title"] h1 {
+    font-size: 1rem;
+  }
+
+  [data-collapsible="title"]::after {
+    top: 0.25rem;
+    right: 0;
+    transform: none;
+  }
+
+  .napratica [data-carousel="tile"] {
+    min-width: 90vw;
+    min-height: 174vw;
+    background-position: 50%;
+  }
+}
