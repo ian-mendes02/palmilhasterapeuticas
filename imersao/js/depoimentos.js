@@ -10,6 +10,7 @@ const depoimentos = await fetch_d().then(data => { return data; });
 const d_container = document.querySelector("#depoimentos ul");
 const p_counter = document.getElementById("page_counter");
 let buttons = document.getElementById("d_buttons").children;
+const options = `frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen`
 var pnum = 1;
 var pageCount;
 var panels;
@@ -35,7 +36,7 @@ const writeList = () => {
     var v_wrapper = d_container.querySelectorAll(".video-wrapper");
     for (let i = 0; i < v_wrapper.length; i++) {
         let dp = depoimentos[i];
-        v_wrapper[i].addEventListener("click", () => v_wrapper[i].innerHTML = `\n\t\t<iframe src="${dp.iframe.src}" id="${dp.iframe.id}" allowfullscreen="true" fetchpriority="high" allow="autoplay"></iframe>`);
+        v_wrapper[i].addEventListener("click", () => v_wrapper[i].innerHTML = `\n\t\t<iframe src="https://www.youtube.com/embed/${dp.iframe.src}?autoplay=1&amp;rel=0" title="${dp.iframe.title}" ${options}></iframe>`);
     };
     countPages();
 };
