@@ -5,6 +5,6 @@ node_modules
 *.Identifier
 *.map
 *.scss
-ptcn-vendas/css/source
 /archive
 **/api
+/_next
