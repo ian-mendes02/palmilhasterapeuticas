@@ -1,9 +1,0 @@
-<IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "*"
-</IfModule>
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteCond %{HTTP_HOST} !^palmilhasterapeuticas.com.br$ [NC]
-    RewriteRule ^(.*)$ https://palmilhasterapeuticas.com.br/$1 [R=301,L]
-</IfModule>
