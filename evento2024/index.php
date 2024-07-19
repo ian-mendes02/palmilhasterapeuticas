@@ -1,0 +1,1 @@
+<?php header("Location: https://palmilhasterapeuticas.com.br/evento2024/presencial/");
